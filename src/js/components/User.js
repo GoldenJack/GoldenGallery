@@ -5,10 +5,10 @@ class User extends Component {
         return (
             <div className="user">
                 <div className="user__avatar">
-                    <img src="{ props.user.avatar }" className="user__image"></img>
+                    <img src={ this.props.avatar } className="user__image"></img>
                 </div>
-                <p className="user__name">{ this.props.user.name }</p>
-                <p className="user__count-photo">{ this.props.user.photo }</p>
+                <p className="user__name">{ this.props.name }</p>
+                <p className="user__count-photo">{ this.props.files }</p>
                 <a href="#" className="user__btn">upload</a>
             </div>
         )

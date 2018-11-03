@@ -36,6 +36,8 @@
   },
   "homepage": "https://github.com/GoldenJack/GoldenGallery#readme",
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-preset-react": "^6.24.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   }

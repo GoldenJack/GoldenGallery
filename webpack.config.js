@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
-        './src/js/index.jsx',
+        './src/js/index.js',
         './src/assets/scss/app.scss'
     ],
     output: {
@@ -21,7 +21,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js|jsx$/,
+                test: /\.js$/,
                 exclude: '/node_modules/',
 				loader: 'babel-loader'
             },
