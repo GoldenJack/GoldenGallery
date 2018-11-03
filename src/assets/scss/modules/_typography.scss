@@ -1,0 +1,16 @@
+a, p, b, span, h1, h2, h3, h4, h5, h6, span {
+    // font-family: $ff;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+input[type=submit],
+button {
+    border: none;
+    cursor: pointer;
+}
