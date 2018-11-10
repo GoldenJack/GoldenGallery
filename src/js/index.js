@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Home from './pages/Home'
+import { HashRouter } from 'react-router-dom'
+import App from './App'
+
 
 ReactDOM.render(
-    <Home/>,
+    <HashRouter>
+        <App/>
+    </HashRouter>,
     document.getElementById('root')
 )

@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import User from '../components/User'
+import React, { Component } from 'react';
+import Account from '../components/Account';
+
 
 class Home extends Component {
-    render(){
-        const user = {
-            name: 'Golden Jack',
-            files: 0,
-            avatar: 'img/avatar.png'
-        };
+    constructor(props){
+        super(props);
 
+    }
+    render(){
         return (
-            <User name={ user.name } files={ user.files } avatar={ user.avatar }/>
+            <h1>Home</h1>
         )
     }
 }
