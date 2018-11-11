@@ -83,14 +83,14 @@ module.exports = {
 			}
 		]),
 		new HtmlWebpackPlugin({
-			title: 'index',
-			filename: 'index.html',
-			template: './src/assets/html/index.html'
+			title: 'home',
+			filename: 'home.html',
+			template: './src/assets/html/home.html'
 		}),
 		new HtmlWebpackPlugin({
-			title: 'home',
-			filename: 'Home.html',
-			template: './src/Home.html'
+			title: 'index',
+			filename: 'index.html',
+			template: './src/index.html'
 		})
 	],
     devtool: "source-map"
