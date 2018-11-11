@@ -18,18 +18,14 @@ modules
 @import "./modules/grid";
 @import "./modules/buttons";
 @import "./modules/typography";
-
 /*=============
 components
 ===============*/
 @import "./components/account";
 @import "./components/user";
 @import "./components/search";
-
-/*=============
-icons
-===============*/
-@import '/node_modules/typicons.font/src/font/typicons.css';
+@import "./components/docket";
+@import "./components/content";
 
 /*=============
 pages
