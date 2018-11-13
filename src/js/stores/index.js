@@ -1,24 +1,19 @@
 import { EventEmitter } from 'events';
 import Dispatcher from '../dispatcher';
 import ActionTypes from '../constants';
+import Immutable from 'immutable'
+
+import Gallery from '../data/gallery'
  
 const CHANGE = 'CHANGE';
-let _items_photo = [
-    {
-        id: 0,
-        title: 'Item 1',
-        src: 'img/avatar.png'
-    },
-    {
-        id: 1,
-        title: 'Item 2',
-        src: 'img/avatar.png'
-    }
-];
+
+let _gallery_store = Gallery;
  
-class PhotoStore extends EventEmitter {
-    constructor() {
-        super();
+class GalleryStore extends EventEmitter {
+    constructor(data) {
+        super(Dispatcher);
+
+        this.data = data;
 
         Dispatcher.register(this._registerToActions.bind(this));
     }
@@ -26,51 +21,43 @@ class PhotoStore extends EventEmitter {
     _registerToActions(action) {
         switch(action.actionType) {
 
-            case ActionTypes.CLICK_ITEM:
-                this._clickItem(action.payload);
-
-            case ActionTypes.DELETE_ITEM:
-                this._deleteItem(action.payload);
+            case ActionTypes.SEARCH_ITEM:
+                this._searchItem(action.payload);
 
             break;
         }
     }
- 
-    /*
-        actions 
-    */
 
-    _addNewItem(item) {
-        item.id = _walletState.length;
-        _walletState.push(item);
+    _searchItem(value){
+        let result;
+        let searchQuery = value.toLowerCase();
+
+        result = this.data.map(( item ) => {
+            item.photo = item.photo.filter( (photo) => {
+                let title = photo.title.toLowerCase();
+                return title.indexOf(searchQuery) !== -1;
+            })
+            return item;
+        })
+
+        this.data = result
+
         this.emit(CHANGE);
     }
 
     _deleteItem(id) {
-        _items_photo.map((item) => {
+        _items_photo.map((item, iter) => {
             if(item.id === id) {
-                console.log(item)
+                _items_photo.splice(iter, 1);
+                this.emit(CHANGE);
             }
         })
     }
  
     // Returns the current store's state.
     getAllItems() {
-        return _items_photo;
+        return this.data;
     }
- 
- 
-    // Calculate the total budget.
-    getTotalBudget() {
-        let totalBudget = 0;
- 
-        _walletState.forEach((item) => {
-            totalBudget += parseFloat(item.amount);
-        });
- 
-        return totalBudget;
-    }
- 
  
     // Hooks a React component's callback to the CHANGED event.
     addChangeListener(callback) {
@@ -83,4 +70,4 @@ class PhotoStore extends EventEmitter {
     }
 }
  
-export default new PhotoStore();
+export default new GalleryStore(_gallery_store);

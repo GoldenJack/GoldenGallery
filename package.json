@@ -41,6 +41,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
     "babel-preset-react": "^6.24.1",
+    "immutable": "^4.0.0-rc.12",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   }

@@ -14,7 +14,7 @@ export default class App extends Component {
     render(){
         return (
             <div className="home">
-                <div className="container"> 
+                <div className="container flex"> 
                     <Account/>
 
                     <div className="content">

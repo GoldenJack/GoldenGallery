@@ -1,4 +1,4 @@
 export default {
-    CLICK_ITEM: 'CLICK_ITEM',
+    SEARCH_ITEM: 'SEARCH_ITEM',
     DELETE_ITEM: 'DELETE_ITEM'
 }

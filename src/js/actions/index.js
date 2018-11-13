@@ -2,21 +2,13 @@ import Dispatcher from '../dispatcher';
 import ActionTypes from '../constants';
  
 class PhotoGallery {
- 
-    clickItem(item) {
-        Dispatcher.dispatch({
-            actionType: ActionTypes.CLICK_ITEM,
-            payload: item 
-        });
-    }
 
-    deleteItem(item) {
+    searchItem(item) {
         Dispatcher.dispatch({
-            actionType: ActionTypes.DELETE_ITEM,
+            actionType: ActionTypes.SEARCH_ITEM,
             payload: item
         })
     }
-
  
 }
  

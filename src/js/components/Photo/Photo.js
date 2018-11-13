@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PhotoStore from '../../stores';
 
 
 export default class Photo extends Component {
@@ -13,17 +12,20 @@ export default class Photo extends Component {
         }
     }
 
-    deleteItem(id) {
-        event.preventDefault();
-        PhotoStore._deleteItem(id);
-    }
-
     render(){
+        let style = {
+            flex: '0 0 30%',
+            padding: '15px'
+        }
+        let img = {
+            width: '100%',
+            marginBottom: '14px'
+        }
         return (
-            <div className="" id={ this.state.id }>
-                <img src={ this.state.src }/>
+            <div id={ this.state.id } style={ style }>
+                <img src={ this.state.src } style={ img }/>
                 <p>{ this.state.title }</p>
-                <a href="#" className="delete" onClick={ this.deleteItem.bind(this, this.state.id) }>Delete</a>
+                <a href="#" className="delete">Delete</a>
             </div>
         )
     }

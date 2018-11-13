@@ -1,40 +1,50 @@
 import React, { Component } from 'react';
-import Photo from '../components/Photo/Photo';
-import PhotoStore from '../stores';
+import GalleryStore from '../stores';
+
+import Category from '../components/Category/Category'
 
 class Home extends Component {
     constructor(props){
         super(props);
 
         this.state = {
-            items: PhotoStore.getAllItems()
+            gallery: GalleryStore.getAllItems()
         }
     }
 
-    _photoDisplay(){
-        let itemsNotFound;
+    _onChange() {
+        this.setState({ gallery: GalleryStore.getAllItems() });
+        console.log(this.state.gallery)
+    }
+ 
+    componentWillMount() {
+        GalleryStore.addChangeListener(this._onChange.bind(this));
+    }
+ 
+    componentWillUnmount() {
+        GalleryStore.removeChangeListener(this._onChange.bind(this));
+    }
 
-        if(this.state.items.length){
-            let result = this.state.items.map((item)=>
-                <Photo key={ item.id } id={ item.id } title={ item.title } src={ item.src } />
+    _galleryCategory(){
+
+        if(this.state.gallery){
+            let result = this.state.gallery.map((item)=>
+                <Category key={ item.id } name={ item.ru } data={ item.photo } />
             )
-
             return result;
-        }else {
-            itemsNotFound = (!items.length) ? <p className="items_not-found">Фото не найдены</p> : 'yes'
-            return itemsNotFound;
+        } else {
+            return (
+                <p>К сожалению ничего не удалось найти</p>
+            )
         }
     }
-
 
     render(){
-        let items = this._photoDisplay();
+        let content = this._galleryCategory();
+
         return (
             <div>
-                <h1>Фотографии</h1>
-                <div>
-                    { items }
-                </div>
+                { content }
             </div>
         )
     }

@@ -10,16 +10,6 @@ class User extends Component {
         }
     }
 
-    handleClick(){
-        AppDispatcher.dispatch({
-            eventName: 'upload',
-            data: {
-                'title': 'Item1',
-                'desc': 'Lorem ipsim gold ramen'
-            }
-        })
-    }
-
     render(){
         return (
             <div className="home__user user">
@@ -30,7 +20,7 @@ class User extends Component {
                 </div>
                 <Link to="/edit" className="user__name">{ this.props.name }</Link>
                 <p className="user__count-files">{ this.props.files }</p>
-                <a href="" className="user__btn btn" onClick={ this.handleClick.bind(this) }>UPLOAD</a>
+                <a href="" className="user__btn btn">UPLOAD</a>
             </div>
         )
     }
