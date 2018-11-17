@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import Category from '../components/Category/Category';
+import React, { Component } from 'react'
+import Category from '../components/Category/Category'
+
+import { connect } from 'react-redux'
 
 
 
@@ -9,11 +11,11 @@ class Home extends Component {
     }
 
     _galleryCategory( data ){
-
         if(data){
             let result = data.map((item)=>
                 <Category key={ item.id } name={ item.ru } data={ item.photo } />
             )
+            
             return result;
         } else {
             return (
@@ -23,8 +25,9 @@ class Home extends Component {
     }
 
     render(){
-        const { data } = [];
-        let content = this._galleryCategory();
+        const { gallery } = this.props;
+        
+        let content = this._galleryCategory( gallery );
 
         return (
             <div>
@@ -34,4 +37,10 @@ class Home extends Component {
     }
 }
 
-export default Home
+const mapStateToProps = store => {
+    return { 
+        gallery: store.gallery
+    }
+}
+
+export default connect(mapStateToProps)(Home)

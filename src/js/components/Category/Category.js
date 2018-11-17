@@ -17,7 +17,7 @@ class Category extends Component {
 
             return result;
         }else {
-            itemsNotFound = (!this.state.data.length) ? <p className="items_not-found">Фото не найдены</p> : ''
+            itemsNotFound = (!data.length) ? <p className="items_not-found">Фото не найдены</p> : ''
             return itemsNotFound;
         }
     }
