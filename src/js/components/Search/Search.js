@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GalleryStore from '../../stores';
+
 
 export default class Search extends Component {
     constructor(props) {
@@ -14,9 +14,7 @@ export default class Search extends Component {
 
     _handleChange(){
         event.preventDefault();
-
         this.setState({ value: event.target.value })
-        GalleryStore._searchItem(event.target.value);
     }
 
     render(){

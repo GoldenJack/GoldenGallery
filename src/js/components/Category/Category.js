@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import GalleryStore from '../../stores';
 import Photo from '../Photo/Photo';
 
 
 class Category extends Component {
     constructor(props){
         super(props);
-
-        this.state = {
-            data: this.props.data
-        }
     }
 
-    _photoDisplay(){
+    _photoDisplay(data){
         let itemsNotFound;
 
-        if(this.state.data.length){
-            let result = this.state.data.map((item)=>
+        if(data.length){
+            let result = data.map((item)=>
                 <Photo key={ item.id } title={ item.title } src={ item.image } />
             )
 
@@ -27,21 +22,9 @@ class Category extends Component {
         }
     }
 
-    _onChange() {
-        this.setState({ items: GalleryStore.getAllItems() });
-    }
- 
-    componentWillMount() {
-        GalleryStore.addChangeListener(this._onChange.bind(this));
-    }
- 
-    componentWillUnmount() {
-        GalleryStore.removeChangeListener(this._onChange.bind(this));
-    }
-
-
     render(){
-        let content = this._photoDisplay();
+        const { data } = this.props;
+        let content = this._photoDisplay(data);
         let style = {
             display: 'flex',
             alignItems: 'center',
