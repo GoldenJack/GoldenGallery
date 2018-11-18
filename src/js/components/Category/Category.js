@@ -9,10 +9,12 @@ class Category extends Component {
 
     _photoDisplay(data){
         let itemsNotFound;
-
         if(data.length){
-            let result = data.map((item)=>
-                <Photo key={ item.id } title={ item.title } src={ item.image } />
+            let result = data.map((item)=>{ 
+                if(item.display){
+                    return <Photo key={ item.id } title={ item.title } src={ item.image }/>
+                }
+            }
             )
 
             return result;
@@ -24,6 +26,7 @@ class Category extends Component {
 
     render(){
         const { data } = this.props;
+
         let content = this._photoDisplay(data);
         let style = {
             display: 'flex',

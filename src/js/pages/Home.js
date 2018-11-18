@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Category from '../components/Category/Category'
 
 import { connect } from 'react-redux'
+import { clickItem } from '../actions/accountActions'
 
 
 
@@ -13,7 +14,7 @@ class Home extends Component {
     _galleryCategory( data ){
         if(data){
             let result = data.map((item)=>
-                <Category key={ item.id } name={ item.ru } data={ item.photo } />
+                <Category key={ item.id } name={ item.ru } data={ item.photo }/>
             )
             
             return result;
@@ -24,9 +25,15 @@ class Home extends Component {
         }
     }
 
+    btnOnClick(e){
+        e.preventDefault();
+
+        this.props.clickItemAction();
+    }
+
     render(){
         const { gallery } = this.props;
-        
+
         let content = this._galleryCategory( gallery );
 
         return (
@@ -39,8 +46,17 @@ class Home extends Component {
 
 const mapStateToProps = store => {
     return { 
-        gallery: store.gallery
+        gallery: store.galleryReducere.gallery
     }
 }
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = dispatch => {
+    return {
+        clickItemAction: e => dispatch(clickItem(e))
+    }
+}
+
+export default connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(Home)

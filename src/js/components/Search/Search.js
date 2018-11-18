@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+import { connect } from 'react-redux'
+import { searchItem } from '../../actions/accountActions'
 
 
-export default class Search extends Component {
+
+class Search extends Component {
     constructor(props) {
         super(props)
 
@@ -15,6 +19,8 @@ export default class Search extends Component {
     _handleChange(){
         event.preventDefault();
         this.setState({ value: event.target.value })
+
+        this.props.searchItemAction(event.target.value)
     }
 
     render(){
@@ -33,3 +39,20 @@ export default class Search extends Component {
         )
     }
 }
+
+const mapStateToProps = store => {
+    return { 
+        gallery: store.galleryReducere.gallery
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        searchItemAction: e => dispatch(searchItem(e))
+    }
+}
+
+export default connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(Search)

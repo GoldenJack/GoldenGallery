@@ -5,14 +5,16 @@ export default class Photo extends Component {
     constructor(props){
         super(props)
 
-        this.state = {
-            title: this.props.title,
-            src: this.props.src,
-            id: this.props.id
-        }
+        this.btnOnClick = this.btnOnClick.bind(this)
+    }
+
+    btnOnClick(e){
+        e.preventDefault();
+        this.props.clickItem();
     }
 
     render(){
+        const { title, src, id } = this.props;
         let style = {
             flex: '0 0 30%',
             padding: '15px'
@@ -22,10 +24,10 @@ export default class Photo extends Component {
             marginBottom: '14px'
         }
         return (
-            <div id={ this.state.id } style={ style }>
-                <img src={ this.state.src } style={ img }/>
-                <p>{ this.state.title }</p>
-                <a href="#" className="delete">Delete</a>
+            <div id={ id } style={ style }>
+                <img src={ src } style={ img }/>
+                <p>{ title }</p>
+                <a href="#" className="delete" onClick={ this.btnOnClick }>Delete</a>
             </div>
         )
     }
