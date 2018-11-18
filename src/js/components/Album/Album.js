@@ -8,7 +8,7 @@ const propTypes = {
 }
 
 
-class Category extends Component {
+class Album extends Component {
     constructor(props){
         super(props);
     }
@@ -41,6 +41,6 @@ class Category extends Component {
     }
 }
 
-Category.propTypes = propTypes;
+Album.propTypes = propTypes;
 
-export default Category
+export default Album

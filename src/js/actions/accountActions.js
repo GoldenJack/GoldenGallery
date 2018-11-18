@@ -1,3 +1,5 @@
+import * as types  from '../constants';
+
 export function clickItem(e) {
     return {
         type: 'CLICK_ITEM',
@@ -7,7 +9,7 @@ export function clickItem(e) {
 
 export function searchItem(value) {
     return {
-        type: 'SEARCH_ITEM',
+        type: types.SEARCH_ITEM,
         payload: value
     }
 }

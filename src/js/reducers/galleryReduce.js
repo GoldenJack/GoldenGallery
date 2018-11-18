@@ -1,3 +1,5 @@
+import * as types from '../constants';
+
 export const initialState = {
     gallery: [
         {   
@@ -97,7 +99,7 @@ export function galleryReducere(state = initialState, action) {
         case 'CLICK_ITEM':
             console.log(event.target)
 
-        case 'SEARCH_ITEM':
+        case types.SEARCH_ITEM:
             let searchQuery = action.payload.toLowerCase();
 
             let result = state.gallery.map(( item ) => {
