@@ -1,5 +1,11 @@
-import React, { Component } from 'react';
-import Photo from '../Photo/Photo';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Photo from '../Photo/Photo'
+
+const propTypes = {
+    photos: PropTypes.array,
+    name: PropTypes.string.isRequired
+}
 
 
 class Category extends Component {
@@ -7,44 +13,34 @@ class Category extends Component {
         super(props);
     }
 
-    _photoDisplay(data){
-        let itemsNotFound;
-        if(data.length){
-            let result = data.map((item)=>{ 
-                if(item.display){
-                    return <Photo key={ item.id } title={ item.title } src={ item.image }/>
+    _photoDisplay( photos ){
+        if( photos.length ){
+            let result = photos.map(( photo )=>{ 
+                if( photo.display ){
+                    return <Photo key={ photo.id } title={ photo.title } src={ photo.image }/>
                 }
-            }
-            )
+            })
 
             return result;
         }else {
-            itemsNotFound = (!data.length) ? <p className="items_not-found">Фото не найдены</p> : ''
+            let itemsNotFound = <p className="items_not-found">Фото не найдены</p>
             return itemsNotFound;
         }
     }
 
     render(){
-        const { data } = this.props;
-
-        let content = this._photoDisplay(data);
-        let style = {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap'
-        }
-        let caption = {
-            flex: '1 1 100%'
-        }
+        const { photos, name } = this.props;
+        let content = this._photoDisplay( photos );
 
         return (
-            <div className="category" style={ style }>
-            <h2 style={ caption }>{ this.props.name }</h2>
+            <div className="category">
+            <h2>{ name }</h2>
                 { content }
             </div>
         )
     }
 }
+
+Category.propTypes = propTypes;
 
 export default Category

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import { searchItem } from '../../actions/accountActions'
-
-
+//TODO: вынести логику выше на уровень
 
 class Search extends Component {
     constructor(props) {

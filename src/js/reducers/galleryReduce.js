@@ -4,7 +4,7 @@ export const initialState = {
             "id": 1,
             "en": "Landscape",
             "ru": "Пейзажи",
-            "photo": [
+            "photos": [
                 {
                     "id": 1.1,
                     "title": "Германия",
@@ -35,7 +35,7 @@ export const initialState = {
             "id": 2,
             "en": "City",
             "ru": "Города",
-            "photo": [
+            "photos": [
                 {
                     "id": 2.1,
                     "title": "Изображение номер 1",
@@ -66,7 +66,7 @@ export const initialState = {
             "id": 3,
             "en": "Peaple",
             "ru": "Люди",
-            "photo": [
+            "photos": [
                 // {
                 //     "id": 2.1,
                 //     "title": "Изображение номер 1",
@@ -101,7 +101,7 @@ export function galleryReducere(state = initialState, action) {
             let searchQuery = action.payload.toLowerCase();
 
             let result = state.gallery.map(( item ) => {
-                item.photo.map( (photo) => {
+                item.photos.map( (photo) => {
                     let title = photo.title.toLowerCase();
                     
                     photo.display = false;

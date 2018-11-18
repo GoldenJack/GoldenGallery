@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
 import Category from '../components/Category/Category'
-
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { clickItem } from '../actions/accountActions'
 
-
+const propTypes = {
+    gallery: PropTypes.array
+}
 
 class Home extends Component {
     constructor(props){
         super(props);
     }
 
-    _galleryCategory( data ){
-        if(data){
-            let result = data.map((item)=>
-                <Category key={ item.id } name={ item.ru } data={ item.photo }/>
+    _galleryCategory( gallery ){
+        if( gallery ){
+            let result = gallery.map(( galleryCategory )=>
+                <Category 
+                    key={ galleryCategory.id } 
+                    name={ galleryCategory.ru } 
+                    photos={ galleryCategory.photos }/>
             )
             
             return result;
@@ -43,6 +48,8 @@ class Home extends Component {
         )
     }
 }
+
+Home.propTypes = propTypes;
 
 const mapStateToProps = store => {
     return { 
