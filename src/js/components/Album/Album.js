@@ -33,10 +33,21 @@ class Album extends Component {
             return itemsNotFound;
         }
     }
+    _photoCount( photos ) {
+        let count = 0;
+        if(photos.length){
+            photos.map( ( item ) => {
+                return ( !item.display ) ? count : ++count;
+            } )
+        } else {
+            return count;
+        }
+        return count;
+    }
 
     render(){
         const { photos, name } = this.props;
-        let albumCount = photos.length;
+        let albumCount = this._photoCount( photos );
         let content = this._photoDisplay( photos );
 
         return (
