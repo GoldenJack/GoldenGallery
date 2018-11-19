@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Album from '../../components/Album/Album'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { previewPhoto, closePreview } from '../../actions/accountActions'
+import { previewPhoto, closePreview } from '../../actions/galleryActions'
 import Preview from '../../components/Preview/Preview'
 
 const propTypes = {

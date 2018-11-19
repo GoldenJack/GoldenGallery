@@ -1,4 +1,4 @@
-import * as types from '../constants';
+import * as types from '../constants/galleryConst'
 
 export const initialState = {
     previewDisplay: false,

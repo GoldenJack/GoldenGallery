@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux'
-import { searchItem } from '../../actions/accountActions'
-//TODO: вынести логику выше на уровень
+const propTypes = {
+    searchFunc: PropTypes.func.isRequired
+}
 
 class Search extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             value: ''
         }
@@ -17,9 +17,11 @@ class Search extends Component {
 
     _handleChange(){
         event.preventDefault();
+        const { searchFunc } = this.props;
+
         this.setState({ value: event.target.value })
 
-        this.props.searchItemAction(event.target.value)
+        searchFunc(event.target.value);
     }
 
     render(){
@@ -39,19 +41,6 @@ class Search extends Component {
     }
 }
 
-const mapStateToProps = store => {
-    return { 
-        gallery: store.galleryReducere.gallery
-    }
-}
+Search.propTypes = propTypes;
 
-const mapDispatchToProps = dispatch => {
-    return {
-        searchItemAction: e => dispatch(searchItem(e))
-    }
-}
-
-export default connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(Search)
+export default Search;

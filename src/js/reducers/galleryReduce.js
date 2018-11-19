@@ -1,4 +1,5 @@
-import * as types from '../constants';
+import * as types from '../constants/galleryConst'
+import { SEARCH_ITEM } from '../constants/accountConst'
 
 export const initialState = {
     gallery: [
@@ -96,7 +97,7 @@ export const initialState = {
 
 export function galleryReducere(state = initialState, action) {
     switch (action.type) {
-        case types.SEARCH_ITEM:
+        case SEARCH_ITEM:
             let searchQuery = action.payload.toLowerCase();
 
             let result = state.gallery.map(( item ) => {
