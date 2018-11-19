@@ -1,13 +1,20 @@
 import * as types  from '../constants';
 
-export function clickItem(e) {
+export function previewPhoto( target ) {
     return {
-        type: 'CLICK_ITEM',
-        payload: e,
+        type: types.PREVIEW_PHOTO,
+        payload: target,
     }
 }
 
-export function searchItem(value) {
+export function closePreview() {
+    return {
+        type: types.CLOSE_PREVIEW,
+        payload: '',
+    }
+}
+
+export function searchItem( value ) {
     return {
         type: types.SEARCH_ITEM,
         payload: value

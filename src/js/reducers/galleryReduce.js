@@ -22,7 +22,7 @@ export const initialState = {
                 {
                     "id": 1.3,
                     "title": "Дания",
-                    "image": "img/photo/landscape/3.jpg",
+                    "image": "img/photo/landscape/2.jpg",
                     "display": true
                 },
                 {
@@ -91,14 +91,11 @@ export const initialState = {
                 // },
             ]
         }
-    ]  
+    ]
 }
 
 export function galleryReducere(state = initialState, action) {
     switch (action.type) {
-        case 'CLICK_ITEM':
-            console.log(event.target)
-
         case types.SEARCH_ITEM:
             let searchQuery = action.payload.toLowerCase();
 

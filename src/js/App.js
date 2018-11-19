@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Account from './components/Account'
-import Home from './pages/Home'
-import Edit from './pages/Edit'
-import Gallery from './pages/Gallery/Gallery'
+import Home from './containers/Home'
+import Edit from './containers/Edit'
+import Gallery from './containers/Gallery/Gallery'
 
 import { Switch, Route } from 'react-router-dom';
 

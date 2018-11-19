@@ -1,1 +1,3 @@
 export const SEARCH_ITEM = 'SEARCH_ITEM';
+export const PREVIEW_PHOTO = 'PREVIEW_PHOTO';
+export const CLOSE_PREVIEW = 'CLOSE_PREVIEW';

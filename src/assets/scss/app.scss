@@ -15,9 +15,12 @@ html, body {
 /*=============
 modules
 ===============*/
+@import "./modules/variables";
 @import "./modules/grid";
 @import "./modules/buttons";
 @import "./modules/typography";
+@import "./modules/fonts";
+
 /*=============
 components
 ===============*/
@@ -26,6 +29,8 @@ components
 @import "./components/search";
 @import "./components/docket";
 @import "./components/content";
+@import "./components/preview";
+@import "./components/gallery";
 
 /*=============
 pages

@@ -1,17 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-export default class Preview extends Component {
+const propTypes = {
+    display: PropTypes.bool.isRequired,
+    img: PropTypes.string.isRequired,
+    close: PropTypes.func.isRequired
+}
+
+class Preview extends Component {
     constructor(props){
         super(props);
     }
 
-    render() {        
+    render() {
+        const { display, img, close } = this.props;
+        let style = (display) ? { display: 'block' } : { display: 'none' };
+
+            
         return (
-            <div className="preview-box">
+            <div className="preview-box" style={ style }>
+                <span className="preview-box__close" onClick={ close }></span>
                 <div className="preview-box__wrap">
-                    <img src={ this.props.src } className="preview-box__image"/>
+                    <img src={ img } className="preview-box__image"/>
                 </div>
             </div>
         )
     }
 }
+
+Preview.propTypes = propTypes;
+
+export default Preview;
