@@ -1,7 +1,8 @@
 export const initialState = {
     user: {
         name: 'Golden Jack',
-        avatar: 'img/avatar.png'
+        avatar: 'img/avatar.png',
+        button: 'Создать'
     } 
 }
 

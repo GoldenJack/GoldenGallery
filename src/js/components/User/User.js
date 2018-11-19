@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 const propTypes = {
     avatar: PropTypes.string,
     name: PropTypes.string.isRequired,
-    files: PropTypes.number.isRequired
+    files: PropTypes.number.isRequired,
+    button: PropTypes.string.isRequired
 }
 
 class User extends Component {
@@ -14,7 +15,7 @@ class User extends Component {
     }
 
     render(){
-        const { name, files } = this.props;
+        const { name, files, button } = this.props;
 
         let avatar = ( this.props.avatar ) ? this.props.avatar : 'img/no_avatar.png'
 
@@ -27,7 +28,7 @@ class User extends Component {
                 </div>
                 <Link to="/edit" className="user__name">{ name }</Link>
                 <p className="user__count-files">{ files }</p>
-                <a href="" className="user__btn btn">UPLOAD</a>
+                <a href="" className="user__btn btn">{ button }</a>
             </div>
         )
     }

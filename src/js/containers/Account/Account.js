@@ -33,7 +33,7 @@ class Account extends Component {
 
         return (
             <div className="account">
-                <User name={ user.name } files={ files } avatar={ user.avatar }/>
+                <User name={ user.name } files={ files } avatar={ user.avatar } button={ user.button }/>
                 <Search searchFunc={ searchItemAction }/>
             </div>
         )
