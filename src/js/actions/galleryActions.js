@@ -9,7 +9,6 @@ export function previewPhoto( target ) {
 
 export function closePreview() {
     return {
-        type: types.CLOSE_PREVIEW,
-        payload: '',
+        type: types.CLOSE_PREVIEW
     }
 }

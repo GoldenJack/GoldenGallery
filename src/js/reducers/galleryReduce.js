@@ -98,21 +98,7 @@ export const initialState = {
 export function galleryReducere(state = initialState, action) {
     switch (action.type) {
         case SEARCH_ITEM:
-            let searchQuery = action.payload.toLowerCase();
-
-            let result = state.gallery.map(( item ) => {
-                item.photos.map( (photo) => {
-                    let title = photo.title.toLowerCase();
-                    
-                    photo.display = false;
-                    if(title.indexOf(searchQuery) !== -1){
-                        photo.display = true
-                    }
-                })
-                return item;
-            })
-
-            return { ...state, gallery: result }
+            return { ...state, gallery: action.payload }
         default:
             return state
     }
