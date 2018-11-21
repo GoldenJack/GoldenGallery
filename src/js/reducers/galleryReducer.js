@@ -95,7 +95,7 @@ export const initialState = {
     ]
 }
 
-export function galleryReducere(state = initialState, action) {
+export function galleryReducer(state = initialState, action) {
     switch (action.type) {
         case SEARCH_ITEM:
             return { ...state, gallery: action.payload }

@@ -59,8 +59,8 @@ Gallery.propTypes = propTypes;
 
 const mapStateToProps = store => {
     return { 
-        gallery: store.galleryReducere.gallery,
-        preview: store.previewReducere
+        gallery: store.galleryReducer.gallery,
+        preview: store.previewReducer
     }
 }
 

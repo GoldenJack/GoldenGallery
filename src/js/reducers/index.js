@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import { galleryReducere } from './galleryReduce'
-import { userReducere } from './userReduce'
-import { previewReducere } from './previewReducere'
+import { galleryReducer } from './galleryReducer'
+import { userReducer } from './userReducer'
+import { previewReducer } from './previewReducer'
 
 
 export const rootReducer = combineReducers({
-    galleryReducere,
-    userReducere,
-    previewReducere
+    galleryReducer,
+    userReducer,
+    previewReducer
 });

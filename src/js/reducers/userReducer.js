@@ -6,7 +6,7 @@ export const initialState = {
     } 
 }
 
-export function userReducere(state = initialState, action) {
+export function userReducer(state = initialState, action) {
     switch (action.type) {
         case 'CLICK_ITEM':
             console.log(event.target)

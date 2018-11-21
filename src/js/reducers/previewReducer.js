@@ -5,7 +5,7 @@ export const initialState = {
     previewImg: ''
 }
 
-export function previewReducere(state = initialState, action) {
+export function previewReducer(state = initialState, action) {
     switch (action.type) {
         case types.PREVIEW_PHOTO:
             return  { 

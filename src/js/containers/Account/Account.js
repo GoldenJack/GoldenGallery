@@ -67,8 +67,8 @@ Account.propTypes = propTypes;
 
 const mapStateToProps = store => {
     return { 
-        gallery: store.galleryReducere.gallery,
-        user: store.userReducere.user
+        gallery: store.galleryReducer.gallery,
+        user: store.userReducer.user
     }
 }
 
