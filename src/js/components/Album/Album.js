@@ -11,8 +11,6 @@ const propTypes = {
 class Album extends Component {
     constructor(props){
         super(props);
-
-        
     }
 
     _photoDisplay( photos ){
@@ -23,7 +21,8 @@ class Album extends Component {
                                 key={ photo.id } 
                                 title={ photo.title } 
                                 src={ photo.image } 
-                                preview={ this.props.preview }/>
+                                preview={ this.props.preview }
+                                number={ photo.id }/>
                 }
             })
 

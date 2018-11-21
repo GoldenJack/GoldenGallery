@@ -1,0 +1,43 @@
+.list {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+.list__caption {
+    padding: 0 26px;
+    margin: 20px 0;
+    color:  #d7d6df;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    text-align: left;
+    text-transform: uppercase;
+}
+.list__list {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+.list__item {
+    flex: 0 0 100%;
+    padding: 0 35px;
+    margin-bottom: 5px;
+    color:  #a3a2a8;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
+    border-left: 3px solid transparent;
+
+    transition: ease-in-out .3s;
+    &:hover {
+        background-color:  rgba(17, 17, 17, 0.4);
+        color:  #d6d5df;
+        border-left: 3px solid #ea5a5a;
+    }
+}
+.list__item_active {
+    background-color:  rgba(17, 17, 17, 0.4);
+    color:  #d6d5df;
+    border-left: 3px solid #ea5a5a;
+}
