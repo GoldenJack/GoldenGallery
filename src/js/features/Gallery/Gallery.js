@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Album from '../../components/Album/Album'
+import Album from 'molecules/Album/Album'
 import PropTypes from 'prop-types'
-import Preview from '../../components/Preview/Preview'
+import Preview from 'atoms/Preview/Preview'
 
 const propTypes = {
     gallery: PropTypes.array,
@@ -18,11 +18,11 @@ class Gallery extends Component {
         if( gallery ){
             let result = gallery.map(( galleryAlbum )=>
                 <Album 
-                    key={ galleryAlbum.id } 
-                    name={ galleryAlbum.ru } 
+                    key={ galleryAlbum.key } 
+                    name={ galleryAlbum.titleRu } 
                     photos={ galleryAlbum.photos }
                     preview={ this.props.previewPhotoAction }
-                    album={ galleryAlbum.en.toLowerCase() } />
+                    album={ galleryAlbum.id } />
             )
             
             return result;

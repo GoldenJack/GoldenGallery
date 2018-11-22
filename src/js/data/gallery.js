@@ -1,8 +1,9 @@
 export const gallery  = [
     {   
-        "id": 1,
-        "en": "Landscape",
-        "ru": "Пейзажи",
+        "id": 'landscape',
+        "key": 1,
+        "titleEn": "Landscape",
+        "titleRu": "Пейзажи",
         "photos": [
             {
                 "id": 1.1,
@@ -31,9 +32,10 @@ export const gallery  = [
         ]
     },
     {   
-        "id": 2,
-        "en": "City",
-        "ru": "Города",
+        "id": "city",
+        "key": 2,
+        "titleEn": "City",
+        "titleRu": "Города",
         "photos": [
             {
                 "id": 2.1,
@@ -62,9 +64,10 @@ export const gallery  = [
         ]
     },
     {   
-        "id": 3,
-        "en": "Peaple",
-        "ru": "Люди",
+        "id": 'peaple',
+        "key": 3,
+        "titleEn": "Peaple",
+        "titleRu": "Люди",
         "photos": [
             // {
             //     "id": 2.1,

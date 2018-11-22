@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { gallery } from '../../data/gallery'
 
-import Image from '../Image/Image'
+import Image from 'atoms/Image/Image'
 
 const propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
+}
+
+const defaultProps = {
+    title: '',
+    image: ''
 }
 
 class PhotoPage extends Component {
@@ -14,36 +19,48 @@ class PhotoPage extends Component {
         super(props)
 
         this.state = {
-            photo: {
-                title: '',
-                image: ''
-            }
+            title: '',
+            image: ''
         }
     }
 
-    componentDidMount(){
-        const { number, album } = this.props.match.params;
-        gallery.map( (item)=>{
-            if( item.en.toLowerCase() === album ){
-                let photo = item.photos.filter( (photo) => photo.id === +number )
-                return this.setState({ 
-                    photo: photo[0]
-                })
+    // componentDidMount(){
+    //     const { number, album } = this.props.match.params;
+    //     gallery.map( (item)=>{
+    //         if( item.en.toLowerCase() === album ){
+    //             let photo = item.photos.filter( (photo) => photo.id === +number )
+    //             return this.setState({ 
+    //                 photo: photo[0]
+    //             })
+    //         }
+    //     } )
+    // }
+
+    static getDerivedStateFromProps(props){
+        const { number, album } = props.match.params;
+        let photo;
+        gallery.forEach( item => {
+            if( item.id === album ){
+                photo = item.photos.filter( photo => photo.id === +number )
             }
         } )
+
+        const { title, image } = photo[0];
+        return { title, image }
     }
 
     render(){
-        const { title, image } = this.state.photo;
+        const { title, image } = this.state;
         return (
             <div>
-                <p>Название: { title }  </p>
-                <Image image={ image } />
+                
             </div>
         )
     }
 }
 
 PhotoPage.propTypes = propTypes;
+Image.defaultProps = defaultProps;
+
 
 export default PhotoPage;

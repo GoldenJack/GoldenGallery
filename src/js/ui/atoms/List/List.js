@@ -15,7 +15,7 @@ class List extends Component {
     _generateMenu( menuLinks ){
         return menuLinks.map( ( item ) => {
             return (
-                <NavLink key={ item.id } to={ item.pathName } className="list__item" activeClassName="list__item_active">{ item.title }</NavLink>
+                <NavLink key={ item.key } to={ item.pathName } className="list__item" activeClassName="list__item_active">{ item.title }</NavLink>
             )
         } )
     }
@@ -23,6 +23,7 @@ class List extends Component {
     render(){
         const { title, menuLinks } = this.props;
         let links = this._generateMenu( menuLinks )
+
         return (
             <div className="list">
                 <div className="list__caption">

@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { searchItem } from '../../actions/accountActions'
 import PropTypes from 'prop-types'
 
-import Search from '../../components/Search/Search'
-import User from '../../components/User/User'
-import List from '../../components/List/List'
+import Search from 'atoms/Search/Search'
+import User from 'molecules/User/User'
+import List from 'atoms/List/List'
 
 const propTypes = {
     user: PropTypes.object.isRequired,
@@ -32,9 +30,9 @@ class Account extends Component {
         let menuGallery = [];
         gallery.map( ( item ) => {
             return menuGallery.push({
-                        "title": item.ru,
-                        "pathName": `/gallery/${item.en.toLowerCase()}`,
-                        "id": item.id
+                        "title": item.titleRu,
+                        "pathName": `/gallery/${item.id}`,
+                        "key": item.key
                     })
         } ) 
         return menuGallery;
@@ -47,7 +45,7 @@ class Account extends Component {
             {
                 "title": 'Галлерея', 
                 "pathName": '/gallery', 
-                "id": 0
+                "key": 0
             }
         ]
         let menuGallery = this._getMenu( gallery )
@@ -65,21 +63,4 @@ class Account extends Component {
 
 Account.propTypes = propTypes;
 
-const mapStateToProps = store => {
-    return { 
-        gallery: store.galleryReducer.gallery,
-        user: store.userReducer.user
-    }
-}
-
-
-const mapDispatchToProps = dispatch => {
-    return {
-        searchItemAction: e => dispatch(searchItem(e))
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Account)
+export default Account;

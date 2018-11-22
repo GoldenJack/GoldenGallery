@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Photo from '../Photo/Photo'
+import Photo from 'molecules/Photo/Photo'
 
 const propTypes = {
     photos: PropTypes.array,

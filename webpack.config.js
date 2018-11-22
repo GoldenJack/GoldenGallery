@@ -97,7 +97,8 @@ module.exports = {
 		alias: {
 		  atoms: path.resolve(__dirname, 'src/js/ui/atoms'),
 		  molecules: path.resolve(__dirname, 'src/js/ui/molecules'),
-		  organisms: path.resolve(__dirname, 'src/js/ui/organisms')
+		  organisms: path.resolve(__dirname, 'src/js/ui/organisms'),
+		  features: path.resolve(__dirname, 'src/js/features')
 		}
 	},
     devtool: "source-map"
