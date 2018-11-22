@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Account from './containers/Account/Account'
 import Home from './containers/Home/Home'
 import Edit from './containers/Profile/Profile'
-import Gallery from './containers/Gallery/Gallery'
+import Gallery from './containers/Gallery'
 import PhotoPage from './components/PhotoPage/PhotoPage'
 import Album from './components/Album/Album';
 

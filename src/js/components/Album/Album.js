@@ -4,7 +4,8 @@ import Photo from '../Photo/Photo'
 
 const propTypes = {
     photos: PropTypes.array,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    album: PropTypes.string
 }
 
 
@@ -13,16 +14,17 @@ class Album extends Component {
         super(props);
     }
 
-    _photoDisplay( photos ){
+    _photoDisplay( photos, album ){
         if( photos.length ){
             let result = photos.map(( photo )=>{ 
                 if( photo.display ){
                     return <Photo 
                                 key={ photo.id } 
                                 title={ photo.title } 
-                                src={ photo.image } 
+                                image={ photo.image } 
                                 preview={ this.props.preview }
-                                number={ photo.id }/>
+                                number={ photo.id }
+                                album={ album }/>
                 }
             })
 
@@ -45,9 +47,10 @@ class Album extends Component {
     }
 
     render(){
-        const { photos, name } = this.props;
+        const { photos, name, album } = this.props;
+
         let albumCount = this._photoCount( photos );
-        let content = this._photoDisplay( photos );
+        let content = this._photoDisplay( photos, album );
 
         return (
             <div className="album">

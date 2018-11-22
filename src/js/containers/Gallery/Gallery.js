@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Album from '../../components/Album/Album'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { previewPhoto, closePreview } from '../../actions/galleryActions'
 import Preview from '../../components/Preview/Preview'
 
 const propTypes = {
@@ -23,7 +21,8 @@ class Gallery extends Component {
                     key={ galleryAlbum.id } 
                     name={ galleryAlbum.ru } 
                     photos={ galleryAlbum.photos }
-                    preview={ this.props.previewPhotoAction }/>
+                    preview={ this.props.previewPhotoAction }
+                    album={ galleryAlbum.en.toLowerCase() } />
             )
             
             return result;
@@ -57,21 +56,4 @@ class Gallery extends Component {
 
 Gallery.propTypes = propTypes;
 
-const mapStateToProps = store => {
-    return { 
-        gallery: store.galleryReducer.gallery,
-        preview: store.previewReducer
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        previewPhotoAction: target => dispatch(previewPhoto( target )),
-        closePreviewAction: () => dispatch(closePreview())
-    }
-}
-
-export default connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(Gallery)
+export default Gallery;

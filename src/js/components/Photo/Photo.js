@@ -3,9 +3,14 @@ import PropTypes from 'prop-types'
 import Croppie from 'croppie'
 import { Link } from 'react-router-dom'
 
+import Image from '../Image/Image'
+
 const propTypes = {
     title: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired
+    image: PropTypes.string.isRequired,
+    preview: PropTypes.func,
+    number: PropTypes.number.isRequired,
+    album: PropTypes.string
 }
 
 
@@ -33,13 +38,14 @@ class Photo extends Component {
     
 
     render(){
-        const { title, src, preview, number } = this.props;
+        const { title, image, preview, number, album } = this.props;
+        
         return (
             <div className="photo photo_wrap" ref={this.photo}>
                 <div className="photo__content">
-                    <img src={ src } className="photo__image" onClick={ preview }/>
+                    <Image image={ image } className="photo__image" preview={ preview }/>
                     <div className="photo__info">
-                        <Link to={`/gallery/album/${ number }`} 
+                        <Link to={`/gallery/${ album }/${ number }`} 
                         className="photo__info-title">
                             { title }
                         </Link>
