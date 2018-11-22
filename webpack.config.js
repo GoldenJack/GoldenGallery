@@ -93,5 +93,12 @@ module.exports = {
 			template: './src/index.html'
 		})
 	],
+	resolve: {
+		alias: {
+		  atoms: path.resolve(__dirname, 'src/js/ui/atoms'),
+		  molecules: path.resolve(__dirname, 'src/js/ui/molecules'),
+		  organisms: path.resolve(__dirname, 'src/js/ui/organisms')
+		}
+	},
     devtool: "source-map"
 }
