@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const propTypes = {
@@ -6,18 +6,12 @@ const propTypes = {
     className: PropTypes.string,
     preview: PropTypes.func
 }
-class Image extends Component {
-    constructor(props){
-        super(props)
-    }
 
-    render(){
-        const { image, className, preview } = this.props;
-        return (
-            <img src={ image } className={ className } onClick={ preview }/>
-        )
-    }
-}
+const Image = ({ image, className, preview }) => (
+    <img src={ image } 
+        className={ className } 
+        onClick={ preview }/>
+)
 
 Image.propTypes = propTypes;
 

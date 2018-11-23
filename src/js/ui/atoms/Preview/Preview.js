@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const propTypes = {
@@ -7,26 +7,14 @@ const propTypes = {
     close: PropTypes.func.isRequired
 }
 
-class Preview extends Component {
-    constructor(props){
-        super(props);
-    }
-
-    render() {
-        const { display, img, close } = this.props;
-        let style = (display) ? { display: 'block' } : { display: 'none' };
-
-            
-        return (
-            <div className="preview-box" style={ style }>
-                <span className="preview-box__close" onClick={ close }></span>
-                <div className="preview-box__wrap">
-                    <img src={ img } className="preview-box__image"/>
-                </div>
-            </div>
-        )
-    }
-}
+const Preview = ({ img, close }) => (
+    <div className="preview-box">
+        <span className="preview-box__close" onClick={ close }></span>
+        <div className="preview-box__wrap">
+            <img src={ img } className="preview-box__image"/>
+        </div>
+    </div>
+)
 
 Preview.propTypes = propTypes;
 

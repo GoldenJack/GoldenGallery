@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Album from 'molecules/Album/Album'
+import Album from 'organisms/Album/Album'
 import PropTypes from 'prop-types'
 import Preview from 'atoms/Preview/Preview'
 

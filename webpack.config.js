@@ -27,7 +27,6 @@ module.exports = {
             },
             {
 				test: /\.(sass|scss)$/,
-				include: path.resolve(__dirname, 'src/assets/scss'),
 				use: ExtractTextPlugin.extract({
 					use: [{
 						loader: 'css-loader',
@@ -46,7 +45,10 @@ module.exports = {
 						}
 					}]
 				})
-            },
+			},
+			{
+
+			},
             {
 				test: /\.(png|jpg|gif|svg)$/,
 				use: {
@@ -98,7 +100,8 @@ module.exports = {
 		  atoms: path.resolve(__dirname, 'src/js/ui/atoms'),
 		  molecules: path.resolve(__dirname, 'src/js/ui/molecules'),
 		  organisms: path.resolve(__dirname, 'src/js/ui/organisms'),
-		  features: path.resolve(__dirname, 'src/js/features')
+		  features: path.resolve(__dirname, 'src/js/features'),
+		  utils: path.resolve(__dirname, 'src/js/utils')
 		}
 	},
     devtool: "source-map"

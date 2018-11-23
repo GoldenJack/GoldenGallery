@@ -1,0 +1,10 @@
+.figure {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.figure__image {
+    width: 100%;
+}

@@ -7,35 +7,54 @@ const propTypes = {
     menuLinks: PropTypes.array.isRequired
 }
 
-class List extends Component {
-    constructor(props){
-        super(props)
-    }
+const List = ({ title, menuLinks }) => (
+    <div className="list">
+        <div className="list__caption">
+            <h4 className="list__title">{ title }</h4>
+        </div>
+        <div className="list__list">
+            { generateMenu( menuLinks ) }
+        </div>
+    </div>
+)
 
-    _generateMenu( menuLinks ){
-        return menuLinks.map( ( item ) => {
-            return (
-                <NavLink key={ item.key } to={ item.pathName } className="list__item" activeClassName="list__item_active">{ item.title }</NavLink>
-            )
-        } )
-    }
-
-    render(){
-        const { title, menuLinks } = this.props;
-        let links = this._generateMenu( menuLinks )
-
+let generateMenu = ( menuLinks ) => {
+    return menuLinks.map( ( item ) => {
         return (
-            <div className="list">
-                <div className="list__caption">
-                    <h4 className="list__title">{ title }</h4>
-                </div>
-                <div className="list__list">
-                    { links }
-                </div>
-            </div>
+            <NavLink key={ item.key } to={ item.pathName } className="list__item" activeClassName="list__item_active">{ item.title }</NavLink>
         )
-    }
+    } )
 }
+
+// class List extends Component {
+//     constructor(props){
+//         super(props)
+//     }
+
+//     _generateMenu( menuLinks ){
+//         return menuLinks.map( ( item ) => {
+//             return (
+//                 <NavLink key={ item.key } to={ item.pathName } className="list__item" activeClassName="list__item_active">{ item.title }</NavLink>
+//             )
+//         } )
+//     }
+
+//     render(){
+//         const { title, menuLinks } = this.props;
+//         let links = this._generateMenu( menuLinks )
+
+//         return (
+//             <div className="list">
+//                 <div className="list__caption">
+//                     <h4 className="list__title">{ title }</h4>
+//                 </div>
+//                 <div className="list__list">
+//                     { links }
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
 
 List.propTypes = propTypes;
 

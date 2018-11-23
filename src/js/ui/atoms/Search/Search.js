@@ -26,7 +26,7 @@ class Search extends Component {
 
     render(){
         return (
-            <div className="home__search search">
+            <div className="search">
                 <form action="" className="search__form">
                     <div className="search__icon">
                         <input type="text" 

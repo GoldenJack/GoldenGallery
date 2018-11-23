@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './style.scss'
 
-import { Image } from 'atoms' 
+import Image from 'atoms/Image/Image' 
 
 
 class Figure extends Component {
@@ -11,11 +12,13 @@ class Figure extends Component {
 
     render(){
         const { image } = this.props;
-
+        
         return (
             <div className="figure">
-                <Image src={ image } className="figure__image" />
+                <Image image={ image } className="figure__image" />
             </div>
         )
     }
 }
+
+export default Figure;

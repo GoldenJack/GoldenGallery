@@ -9,25 +9,85 @@ export const gallery  = [
                 "id": 1.1,
                 "title": "Германия",
                 "image": "img/photo/landscape/1.jpg",
-                "display": true
+                "display": true,
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
             },
             {
                 "id": 1.2,
                 "title": "Гержиния",
                 "image": "img/photo/landscape/2.jpg",
-                "display": true
+                "display": true,
+                "comments": []
             },
             {
                 "id": 1.3,
                 "title": "Дания",
                 "image": "img/photo/landscape/2.jpg",
-                "display": true
+                "display": true,
+                "comments": []
             },
             {
                 "id": 1.4,
                 "title": "Изображение номер 4",
                 "image": "img/photo/landscape/4.jpg",
-                "display": true
+                "display": true,
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
             },
         ]
     },
@@ -41,25 +101,141 @@ export const gallery  = [
                 "id": 2.1,
                 "title": "Изображение номер 1",
                 "image": "img/photo/city/1.jpg",
-                "display": true
+                "display": true,
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
             },
             {
                 "id": 2.2,
                 "title": "Изображение номер 2",
                 "image": "img/photo/city/2.jpg",
-                "display": true
+                "display": true,
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
             },
             {
                 "id": 2.3,
                 "title": "Изображение номер 3",
                 "image": "img/photo/city/3.jpg",
-                "display": true
+                "display": true,
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
             },
             {
                 "id": 2.4,
                 "title": "Изображение номер 4",
                 "image": "img/photo/city/4.jpg",
-                "display": true
+                "display": true,
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
             },
         ]
     },

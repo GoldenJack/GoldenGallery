@@ -6,29 +6,7 @@
    background-color: #272631;
    padding: 30px 0px 32px; 
 }
-.user__avatar {
-    display: flex;
-    
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-bottom: 18px;
-}
-.user__avatar-image {
-    max-width: 80px;
-    border-radius: 50%;
-}
-.user__name {
-    color: #fff;
-    font-size: 13px;
-    margin-bottom: 9px;
-}
-.user__count-files {
-    color: #a3a2a8;
-    font-size: 11px;
-    margin-bottom: 21px;
-}
+
 .user__btn {
     width: 160px;
     height: 36px;

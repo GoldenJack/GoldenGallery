@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import Search from 'atoms/Search/Search'
-import User from 'molecules/User/User'
+import User from 'organisms/User/User'
 import List from 'atoms/List/List'
 
 const propTypes = {
