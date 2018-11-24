@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import bemHelper from 'utils/bem-helper'
+import './style.scss'
 
-const propTypes = {
-    searchFunc: PropTypes.func.isRequired
-}
+const cn = bemHelper('search');
 
 class Search extends Component {
     constructor(props) {
@@ -26,11 +26,11 @@ class Search extends Component {
 
     render(){
         return (
-            <div className="search">
-                <form action="" className="search__form">
-                    <div className="search__icon">
+            <div { ...cn('') }>
+                <form action="" { ...cn('form') }>
+                    <div { ...cn('icon') }>
                         <input type="text" 
-                        className="search__input" 
+                        { ...cn('input') } 
                         placeholder="Найти изображения" 
                         value={ this.state.value }
                         onChange={ this._handleChange }/>
@@ -41,6 +41,8 @@ class Search extends Component {
     }
 }
 
-Search.propTypes = propTypes;
+Search.propTypes = {
+    searchFunc: PropTypes.func.isRequired
+}
 
 export default Search;

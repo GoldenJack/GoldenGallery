@@ -3,7 +3,7 @@ import * as types from '../constants/accountConst'
 
 export function searchItem ( value ) {
     return (dispatch, getState) => {
-        let state = getState().galleryReducere.gallery;
+        let state = getState().galleryReducer.gallery;
         let searchQuery = value.toLowerCase();
 
         let result = state.map(( item ) => {

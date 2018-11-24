@@ -6,7 +6,7 @@ import './style.scss'
 
 import Figure from 'molecules/Figure/Figure'
 import Detailed from 'organisms/Detailed'
-import Description from 'atoms/Description'
+import PhotoInfo from 'atoms/PhotoInfo'
 
 const cn = bemHelper('photo-page');
 
@@ -49,7 +49,7 @@ class PhotoPage extends Component {
             <div { ...cn('') }>
                 <div className="wrap">
                     <Figure image={ image } />
-                    <Description title={ title } />
+                    <PhotoInfo title={ title } />
                 </div>
 
                 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Album from 'organisms/Album/Album'
 import PropTypes from 'prop-types'
-import Preview from 'atoms/Preview/Preview'
+import Preview from 'atoms/Preview/index'
 
 const propTypes = {
     gallery: PropTypes.array,

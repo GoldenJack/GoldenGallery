@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import bemHelper from 'utils/bem-helper'
+
 import Photo from 'molecules/Photo/Photo'
+import Counter from 'atoms/Counter'
+
+const cn = bemHelper('album');
 
 const propTypes = {
     photos: PropTypes.array,

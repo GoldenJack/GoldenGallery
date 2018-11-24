@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './style.scss'
 
-import Image from 'atoms/Image/Image' 
+import Image from 'atoms/Image/index' 
 
 
 class Figure extends Component {

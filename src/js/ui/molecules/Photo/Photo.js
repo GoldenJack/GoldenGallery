@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Croppie from 'croppie'
 import { Link } from 'react-router-dom'
 
-import Image from 'atoms/Image/Image'
+import Image from 'atoms/Image/index'
 
 const propTypes = {
     title: PropTypes.string.isRequired,

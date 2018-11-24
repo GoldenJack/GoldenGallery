@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Search from 'atoms/Search/Search'
+import Search from 'atoms/Search/index'
 import User from 'organisms/User/User'
-import List from 'atoms/List/List'
+import List from 'atoms/List'
 
 const propTypes = {
     user: PropTypes.object.isRequired,
@@ -12,20 +12,6 @@ const propTypes = {
 }
 
 class Account extends Component {
-    _countFiles( gallery ){
-        let count = 0;
-
-        if(gallery.length){
-            gallery.map( ( item ) => {
-                count += item.photos.length;
-            } )
-        } else {
-            return count;
-        }
-
-        return count;
-    }
-
     _getMenu( gallery ) {
         let menuGallery = [];
         gallery.map( ( item ) => {
@@ -40,7 +26,7 @@ class Account extends Component {
 
     render(){
         const { user, gallery, searchItemAction } = this.props
-        let files = this._countFiles( gallery )
+
         let menu = [
             {
                 "title": 'Галлерея', 
@@ -52,7 +38,12 @@ class Account extends Component {
 
         return (
             <div className="account">
-                <User name={ user.name } files={ files } avatar={ user.avatar } button={ user.button }/>
+                <User 
+                    name={ user.name }
+                    avatar={ user.avatar } 
+                    button={ user.button }
+                    recount={ gallery }/>
+
                 <Search searchFunc={ searchItemAction }/>
                 <List title={ 'Menu' } menuLinks={ menu } />
                 <List title={ 'Галлерея' } menuLinks={ menuGallery } />

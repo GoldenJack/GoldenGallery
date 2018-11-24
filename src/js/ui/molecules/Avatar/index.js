@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import bemHelper from 'utils/bem-helper'
 
 import { Link } from 'react-router-dom'
-import Image from 'atoms/Image/Image'
+import Image from 'atoms/Image/index'
 
 import './style.scss'
 
@@ -18,7 +18,7 @@ const Avatar = ({ image, size, mix }) => {
     return (
         <div { ...cn('', size, mix) }>
             <Link to="/">
-                <Image image={ image } { ...cn('image') } />
+                <Image image={ image } mix={ cn('image').className } />
             </Link>
         </div>
     )
