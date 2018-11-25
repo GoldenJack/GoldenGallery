@@ -26,7 +26,7 @@ Avatar.propTypes = {
 }
 
 Avatar.defaultProps = {
-    image: '',
+    image: 'img/no_avatar.png',
     size: ''
 }
 

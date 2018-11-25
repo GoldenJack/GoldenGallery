@@ -21,7 +21,7 @@ class User extends Component {
         const arr = 'photos';
 
         let uploadUrl = '/upload'
-        let size = 'sm';
+        let size = 'md';
 
         return (
             <div { ...cn('') }>
@@ -46,7 +46,7 @@ User.propTypes = {
 }
 
 User.defaultTypes = {
-    avatar: 'img/no_avatar.png',
+    avatar: '',
     name: 'Безымянный',
     recount: 0,
     button: 'Создать'

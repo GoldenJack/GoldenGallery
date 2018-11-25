@@ -30,7 +30,7 @@ class CommentAdd extends Component {
 
         return (
             <div { ...cn('', '', mix) } >
-                <Avatar size="sx" mix={ cn('avatar').className } image="img/avatar.png" />
+                <Avatar size="xs" mix={ cn('avatar').className } image="img/avatar.png" />
                 <form onChange={ this.handleSubmit } { ...cn('form') } >
                     <textarea 
                         type="text" { ...cn('textarea') } 

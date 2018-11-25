@@ -3,14 +3,19 @@
     background-color: #fff;
     border-radius: 50%;
     margin-bottom: 18px;
-    &--sm {
-        width: 80px;
-        height: 80px;
-    }
-    &--sx {
+    flex-shrink: 0;
+    &--xs {
         width: 30px;
         height: 30px;
     }
+    &--s {
+
+    }
+    &--md {
+        width: 80px;
+        height: 80px;
+    }
+    
 }
 .avatar__image {
     max-width: 100%;

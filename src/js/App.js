@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Account  from 'features/Account'
 import Home from 'features/Home/Home'
 import Gallery from 'features/Gallery'
-import PhotoPage from 'features/PhotoPage/PhotoPage'
+import PhotoPage from 'features/PhotoPage'
 
 import { Switch, Route } from 'react-router-dom';
 

@@ -4,12 +4,11 @@ import { gallery } from '../../data/gallery'
 import bemHelper from 'utils/bem-helper'
 import './style.scss'
 
-import Figure from 'molecules/Figure/Figure'
-import Detailed from 'organisms/Detailed'
+import Figure from 'molecules/Figure'
+import CommentList from 'organisms/CommentList'
 import PhotoInfo from 'atoms/PhotoInfo'
 
 const cn = bemHelper('photo-page');
-
 
 
 class PhotoPage extends Component {
@@ -36,13 +35,15 @@ class PhotoPage extends Component {
 
         return (
             <div { ...cn('') }>
-                <div className="wrap">
+                <div { ...cn('content') }>
                     <Figure image={ image } />
                     <PhotoInfo title={ title } />
                 </div>
-
                 
-                <Detailed mix={ cn('detailed').className } comments={ comments }/>
+                <CommentList 
+                    mix={ cn('comments').className } 
+                    comments={ comments }
+                    modify={ 'fixed' }/>
             </div>
         )
     }
@@ -53,7 +54,7 @@ PhotoPage.propTypes = {
     image: PropTypes.string.isRequired,
     comments: PropTypes.array
 };
-Image.defaultTypes = {
+PhotoPage.defaultTypes = {
     title: '',
     image: '',
     comments: []

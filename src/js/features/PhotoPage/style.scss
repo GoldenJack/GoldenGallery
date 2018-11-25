@@ -1,8 +1,12 @@
 .photo-page {
     display: flex;
 
-    &__detailed {
-        
+    &__content {
+        width: calc( 100% - 300px );
+    }
+
+    &__comments {
+        width: 300px;
     }
 }
 

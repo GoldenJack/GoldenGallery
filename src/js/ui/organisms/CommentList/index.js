@@ -7,9 +7,9 @@ import CommentAdd from 'molecules/CommentAdd'
 import Commentary from 'molecules/Commentary'
 
 
-const cn = bemHelper('detailed')
+const cn = bemHelper('comments')
 
-class Detailed extends Component {
+class CommentList extends Component {
     constructor(props){
         super(props)
 
@@ -32,7 +32,8 @@ class Detailed extends Component {
                 <Commentary 
                     key={ i } 
                     date={ item.comment.date }
-                    text={ item.comment.text }/>
+                    text={ item.comment.text }
+                    name={ item.author.name }/>
             ))
         } else {
             return <p>Пока что никто не комментировал. Ты можешь стать первым ;)</p>
@@ -44,13 +45,13 @@ class Detailed extends Component {
     }
 
     render(){
-        const { mix, comments } = this.props;
+        const { mix, comments, modify } = this.props;
         const { width } = this.state;
         let commentsList = this.generateComments( comments )
 
         return (
-            <div { ...cn('', '', mix) } ref={ this.detailed }>
-                <div { ...cn('comments') }>
+            <div { ...cn('', modify, mix) } ref={ this.detailed }>
+                <div { ...cn('list') }>
                     { commentsList }
                 </div>
                 
@@ -61,14 +62,14 @@ class Detailed extends Component {
     }
 }
 
-Detailed.propTypes = {
+CommentList.propTypes = {
     mix: PropTypes.string,
     comments: PropTypes.array
 }
 
-Detailed.defaultTypes = {
+CommentList.defaultTypes = {
     mix: '',
     comments: []
 }
 
-export default Detailed;
+export default CommentList;
