@@ -4,7 +4,7 @@ import bemHelper from 'utils/bem-helper'
 import './style.scss'
 
 import CommentAdd from 'molecules/CommentAdd'
-import Comment from 'molecules/Comment'
+import Commentary from 'molecules/Commentary'
 
 const propTypes = {
 
@@ -32,7 +32,7 @@ class Detailed extends Component {
     generateComments( comments ){
         if(comments.length){
             return comments.map( ( item, i ) => (
-                <Comment 
+                <Commentary 
                     key={ i } 
                     date={ item.comment.date }
                     text={ item.comment.text }/>

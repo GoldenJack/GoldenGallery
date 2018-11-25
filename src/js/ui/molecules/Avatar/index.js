@@ -3,16 +3,12 @@ import PropTypes from 'prop-types'
 import bemHelper from 'utils/bem-helper'
 
 import { Link } from 'react-router-dom'
-import Image from 'atoms/Image/index'
+import Image from 'atoms/Image'
 
 import './style.scss'
 
 const cn = bemHelper('avatar');
 
-const propTypes = {
-    image: PropTypes.string.isRequired,
-    size: PropTypes.oneOf(['sm', 'sx'])
-}
 
 const Avatar = ({ image, size, mix }) => {
     return (
@@ -24,9 +20,14 @@ const Avatar = ({ image, size, mix }) => {
     )
 }
 
-Avatar.propTypes = propTypes;
+Avatar.propTypes = {
+    image: PropTypes.string.isRequired,
+    size: PropTypes.oneOf(['sm', 'sx'])
+}
+
 Avatar.defaultProps = {
-    size: 'sm'
+    image: '',
+    size: ''
 }
 
 export default Avatar;

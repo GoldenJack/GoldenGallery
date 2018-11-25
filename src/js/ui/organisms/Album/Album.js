@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import bemHelper from 'utils/bem-helper'
 
-import Photo from 'molecules/Photo/Photo'
+import Photo from 'molecules/Photo'
 import Counter from 'atoms/Counter'
 
 const cn = bemHelper('album');
@@ -23,13 +23,14 @@ class Album extends Component {
         if( photos.length ){
             let result = photos.map(( photo )=>{ 
                 if( photo.display ){
+                    const url = `/gallery/${ album }/${ photo.id }`
                     return <Photo 
                                 key={ photo.id } 
                                 title={ photo.title } 
                                 image={ photo.image } 
                                 preview={ this.props.preview }
-                                number={ photo.id }
-                                album={ album }/>
+                                url={ url }
+                                size={ 5 }/>
                 }
             })
 

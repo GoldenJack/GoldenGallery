@@ -7,9 +7,6 @@ import Avatar from 'molecules/Avatar'
 
 const cn = bemHelper('comment-add')
 
-const propTypes = {
-
-}
 
 class CommentAdd extends Component {
     constructor(props){
@@ -29,12 +26,10 @@ class CommentAdd extends Component {
     }
 
     render(){
-        const { mix, width } = this.props; 
-        const style = {
-            width: width
-        }
+        const { mix } = this.props; 
+
         return (
-            <div { ...cn('', '', mix) } style={ style }>
+            <div { ...cn('', '', mix) } >
                 <Avatar size="sx" mix={ cn('avatar').className } image="img/avatar.png" />
                 <form onChange={ this.handleSubmit } { ...cn('form') } >
                     <textarea 
@@ -45,6 +40,10 @@ class CommentAdd extends Component {
             </div>
         )
     }
+}
+
+CommentAdd.propTypes = {
+
 }
 
 export default CommentAdd;

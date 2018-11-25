@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import bemHelper from 'utils/bem-helper'
 import './style.scss'
 
-import Image from 'atoms/Image/index' 
+import Image from 'atoms/Image' 
+
+const cn = bemHelper('figure')
 
 
-class Figure extends Component {
-    constructor(props){
-        super(props)
-    }
+const Figure = ({ image }) => (
+    <div { ...cn('') }>
+        <Image image={ image } mix={ cn('image').className } />
+    </div>
+)
 
-    render(){
-        const { image } = this.props;
-        
-        return (
-            <div className="figure">
-                <Image image={ image } className="figure__image" />
-            </div>
-        )
-    }
+Figure.propTypes = {
+    image: PropTypes.string.isRequired
 }
 
 export default Figure;

@@ -10,12 +10,6 @@ import ButtonUpload from 'atoms/ButtonUpload'
 
 const cn = bemHelper('user')
 
-const propTypes = {
-    avatar: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    files: PropTypes.number.isRequired,
-    button: PropTypes.string.isRequired
-}
 
 class User extends Component {
     constructor(props){
@@ -28,10 +22,11 @@ class User extends Component {
 
         let avatar = ( this.props.avatar ) ? this.props.avatar : 'img/no_avatar.png'
         let uploadUrl = '/upload'
+        let size = 'sm';
 
         return (
             <div className="home__user user">
-                <Avatar image={ avatar } />
+                <Avatar image={ avatar } size={ size }/>
                 <Link to="/edit" className="user__name">{ name }</Link>
                 <Counter recount={ recount } arr={ arr } mix={ cn('counter').className }/>
                 <ButtonUpload button={ button } mix={ cn('btn').className } to={ uploadUrl }/>
@@ -40,6 +35,11 @@ class User extends Component {
     }
 }
 
-User.propTypes = propTypes;
+User.propTypes = {
+    avatar: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    files: PropTypes.number.isRequired,
+    button: PropTypes.string.isRequired
+}
 
 export default User;
