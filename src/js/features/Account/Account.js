@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Search from 'atoms/Search/index'
-import User from 'organisms/User/User'
+import Search from 'atoms/Search'
+import User from 'organisms/User'
 import List from 'atoms/List'
 
 const propTypes = {

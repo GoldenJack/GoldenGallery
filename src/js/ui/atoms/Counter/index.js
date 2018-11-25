@@ -30,7 +30,7 @@ let countFiles = ( recount, arr ) => {
         case 'number':
             return count = recount;
         case 'string':
-            return count = item;
+            return count = recount;
     }
     return count;
 }

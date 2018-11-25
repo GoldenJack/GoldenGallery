@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Album from 'organisms/Album/Album'
+import Album from 'organisms/Album/index'
 import PropTypes from 'prop-types'
-import Preview from 'atoms/Preview/index'
+import Preview from 'atoms/Preview'
 
 const propTypes = {
     gallery: PropTypes.array,
@@ -22,7 +22,8 @@ class Gallery extends Component {
                     name={ galleryAlbum.titleRu } 
                     photos={ galleryAlbum.photos }
                     preview={ this.props.previewPhotoAction }
-                    album={ galleryAlbum.id } />
+                    album={ galleryAlbum.id } 
+                    parrent={ 'gallery' }/>
             )
             
             return result;

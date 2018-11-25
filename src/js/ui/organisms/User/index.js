@@ -17,15 +17,14 @@ class User extends Component {
     }
 
     render(){
-        const { name, recount, button } = this.props;
+        const { name, recount, button, avatar } = this.props;
         const arr = 'photos';
 
-        let avatar = ( this.props.avatar ) ? this.props.avatar : 'img/no_avatar.png'
         let uploadUrl = '/upload'
         let size = 'sm';
 
         return (
-            <div className="home__user user">
+            <div { ...cn('') }>
                 <Avatar image={ avatar } size={ size }/>
                 <Link to="/edit" className="user__name">{ name }</Link>
                 <Counter recount={ recount } arr={ arr } mix={ cn('counter').className }/>
@@ -38,8 +37,19 @@ class User extends Component {
 User.propTypes = {
     avatar: PropTypes.string,
     name: PropTypes.string.isRequired,
-    files: PropTypes.number.isRequired,
+    recount: PropTypes.oneOfType([
+        PropTypes.number, 
+        PropTypes.string, 
+        PropTypes.array
+    ]).isRequired,
     button: PropTypes.string.isRequired
+}
+
+User.defaultTypes = {
+    avatar: 'img/no_avatar.png',
+    name: 'Безымянный',
+    recount: 0,
+    button: 'Создать'
 }
 
 export default User;

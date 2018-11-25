@@ -6,9 +6,6 @@ import './style.scss'
 import CommentAdd from 'molecules/CommentAdd'
 import Commentary from 'molecules/Commentary'
 
-const propTypes = {
-
-}
 
 const cn = bemHelper('detailed')
 
@@ -51,15 +48,27 @@ class Detailed extends Component {
         const { width } = this.state;
         let commentsList = this.generateComments( comments )
 
-        console.log( this.state.width )
         return (
             <div { ...cn('', '', mix) } ref={ this.detailed }>
-                { commentsList }
+                <div { ...cn('comments') }>
+                    { commentsList }
+                </div>
+                
 
                 <CommentAdd mix={ cn('comment-add').className } width={ width } />
             </div>
         )
     }
+}
+
+Detailed.propTypes = {
+    mix: PropTypes.string,
+    comments: PropTypes.array
+}
+
+Detailed.defaultTypes = {
+    mix: '',
+    comments: []
 }
 
 export default Detailed;

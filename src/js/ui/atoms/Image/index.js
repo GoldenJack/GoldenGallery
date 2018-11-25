@@ -17,7 +17,7 @@ Image.propTypes = {
     preview: PropTypes.func
 }
 
-Image.propTypes = {
+Image.defaultTypes = {
     image: '',
     mix: ''
 }

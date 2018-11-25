@@ -10,17 +10,6 @@ import PhotoInfo from 'atoms/PhotoInfo'
 
 const cn = bemHelper('photo-page');
 
-const defaultProps = {
-    title: '',
-    image: ''
-}
-
-const propTypes = {
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    comments: PropTypes.array
-}
-
 
 
 class PhotoPage extends Component {
@@ -59,8 +48,16 @@ class PhotoPage extends Component {
     }
 }
 
-PhotoPage.propTypes = propTypes;
-Image.defaultProps = defaultProps;
+PhotoPage.propTypes = {
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    comments: PropTypes.array
+};
+Image.defaultTypes = {
+    title: '',
+    image: '',
+    comments: []
+};
 
 
 export default PhotoPage;
