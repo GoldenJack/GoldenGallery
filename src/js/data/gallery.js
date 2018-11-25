@@ -10,6 +10,8 @@ export const gallery  = [
                 "title": "Германия",
                 "image": "img/photo/landscape/1.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": [
                     {
                         "author": {
@@ -45,6 +47,8 @@ export const gallery  = [
                 "title": "Гержиния",
                 "image": "img/photo/landscape/2.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": []
             },
             {
@@ -52,6 +56,8 @@ export const gallery  = [
                 "title": "Дания",
                 "image": "img/photo/landscape/2.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": []
             },
             {
@@ -59,6 +65,8 @@ export const gallery  = [
                 "title": "Изображение номер 4",
                 "image": "img/photo/landscape/4.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": [
                     {
                         "author": {
@@ -102,6 +110,8 @@ export const gallery  = [
                 "title": "Изображение номер 1",
                 "image": "img/photo/city/1.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": [
                     {
                         "author": {
@@ -137,6 +147,8 @@ export const gallery  = [
                 "title": "Изображение номер 2",
                 "image": "img/photo/city/2.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": [
                     {
                         "author": {
@@ -172,6 +184,8 @@ export const gallery  = [
                 "title": "Изображение номер 3",
                 "image": "img/photo/city/3.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": [
                     {
                         "author": {
@@ -207,6 +221,8 @@ export const gallery  = [
                 "title": "Изображение номер 4",
                 "image": "img/photo/city/4.jpg",
                 "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
                 "comments": [
                     {
                         "author": {

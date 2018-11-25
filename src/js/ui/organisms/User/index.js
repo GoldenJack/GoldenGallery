@@ -25,7 +25,7 @@ class User extends Component {
 
         return (
             <div { ...cn('') }>
-                <Avatar image={ avatar } size={ size }/>
+                <Avatar image={ avatar } size={ size } mix={ cn('avatar').className }/>
                 <Link to="/edit" className="user__name">{ name }</Link>
                 <Counter recount={ recount } arr={ arr } mix={ cn('counter').className }/>
                 <ButtonUpload button={ button } mix={ cn('btn').className } to={ uploadUrl }/>
@@ -45,7 +45,7 @@ User.propTypes = {
     button: PropTypes.string.isRequired
 }
 
-User.defaultTypes = {
+User.defaultProps = {
     avatar: '',
     name: 'Безымянный',
     recount: 0,

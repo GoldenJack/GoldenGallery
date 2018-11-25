@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     box-shadow: 3px 0px 20px 0px rgba(0,0,0,.7);
-    padding: 10px;
 
     &--fixed {
         top: 0;
@@ -13,4 +12,5 @@
 }
 .comments__list {
     flex: 1 1 100%;
+    padding: 10px;
 }

@@ -101,7 +101,8 @@ module.exports = {
 		  molecules: path.resolve(__dirname, 'src/js/ui/molecules'),
 		  organisms: path.resolve(__dirname, 'src/js/ui/organisms'),
 		  features: path.resolve(__dirname, 'src/js/features'),
-		  utils: path.resolve(__dirname, 'src/js/utils')
+		  utils: path.resolve(__dirname, 'src/js/utils'),
+		  img: path.resolve(__dirname, 'src/assets/img')
 		}
 	},
     devtool: "source-map"

@@ -74,7 +74,7 @@ Album.propTypes = {
     album: PropTypes.string.isRequired
 }
 
-Album.defaultTypes = {
+Album.defaultProps = {
     photos: [],
     name: 'Безымянный альбом',
     album: 'undefined'

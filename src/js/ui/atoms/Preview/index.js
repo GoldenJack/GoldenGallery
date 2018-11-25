@@ -20,7 +20,7 @@ Preview.propTypes = {
     close: PropTypes.func.isRequired.propTypes,
     mix: PropTypes.string
 }
-Preview.defaultTypes = {
+Preview.defaultProps = {
     display: false,
     img: '',
     mix: ''

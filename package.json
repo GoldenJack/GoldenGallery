@@ -48,6 +48,7 @@
     "react-dom": "^16.6.0",
     "redux-devtools": "^3.4.2",
     "redux-logger": "^3.0.6",
-    "remote-redux-devtools": "^0.5.13"
+    "remote-redux-devtools": "^0.5.13",
+    "svg-inline-loader": "^0.8.0"
   }
 }

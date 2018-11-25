@@ -5,6 +5,7 @@ import './style.scss'
 
 import CommentAdd from 'molecules/CommentAdd'
 import Commentary from 'molecules/Commentary'
+import DataBar from 'molecules/DataBar'
 
 
 const cn = bemHelper('comments')
@@ -45,12 +46,13 @@ class CommentList extends Component {
     }
 
     render(){
-        const { mix, comments, modify } = this.props;
+        const { mix, comments, modify, countLikes } = this.props;
         const { width } = this.state;
         let commentsList = this.generateComments( comments )
 
         return (
             <div { ...cn('', modify, mix) } ref={ this.detailed }>
+                <DataBar countLikes={ countLikes }/>
                 <div { ...cn('list') }>
                     { commentsList }
                 </div>
@@ -67,7 +69,7 @@ CommentList.propTypes = {
     comments: PropTypes.array
 }
 
-CommentList.defaultTypes = {
+CommentList.defaultProps = {
     mix: '',
     comments: []
 }

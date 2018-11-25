@@ -26,12 +26,12 @@ class PhotoPage extends Component {
         const { number, album } = props.match.params;
         const [filteredAlbum] = gallery.filter(albumData => albumData.id === album);
         const [filteredPhoto] = filteredAlbum.photos.filter(({ id }) => id === +number);
-        const { title, image, comments } = filteredPhoto;
-        return { title, image, comments }
+        const { title, image, comments, countLikes } = filteredPhoto;
+        return { title, image, comments, countLikes }
     }
 
     render(){
-        const { title, image, comments } = this.state;
+        const { title, image, comments, countLikes } = this.state;
 
         return (
             <div { ...cn('') }>
@@ -43,7 +43,8 @@ class PhotoPage extends Component {
                 <CommentList 
                     mix={ cn('comments').className } 
                     comments={ comments }
-                    modify={ 'fixed' }/>
+                    modify={ 'fixed' }
+                    countLikes={ countLikes }/>
             </div>
         )
     }
@@ -54,7 +55,7 @@ PhotoPage.propTypes = {
     image: PropTypes.string.isRequired,
     comments: PropTypes.array
 };
-PhotoPage.defaultTypes = {
+PhotoPage.defaultProps = {
     title: '',
     image: '',
     comments: []

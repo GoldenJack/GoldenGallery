@@ -8,7 +8,8 @@
         "molecules/*": ["src/js/ui/molecules/*"],
         "organisms/*": ["src/js/ui/organisms/*"],
         "features/*": ["src/js/features/*"],
-        "utils/*": ["src/js/utils/*"]
+        "utils/*": ["src/js/utils/*"],
+        "img/*": ["src/assets/img"]
       }
     },
     "exclude": ["node_modules", "dist"]

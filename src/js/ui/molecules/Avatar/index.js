@@ -22,7 +22,7 @@ const Avatar = ({ image, size, mix }) => {
 
 Avatar.propTypes = {
     image: PropTypes.string.isRequired,
-    size: PropTypes.oneOf(['sm', 'sx'])
+    size: PropTypes.oneOf(['xs', 's', 'md'])
 }
 
 Avatar.defaultProps = {
