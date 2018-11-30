@@ -3,15 +3,15 @@ import Album from 'organisms/Album/index'
 import PropTypes from 'prop-types'
 import Preview from 'atoms/Preview'
 
-const propTypes = {
-    gallery: PropTypes.array,
-    preview: PropTypes.object.isRequired,
-    closePreviewAction: PropTypes.func.isRequired
-}
 
-class Gallery extends Component {
+class GalleryList extends Component {
     constructor(props){
         super(props);
+    }
+
+    componentDidMount(){
+        const { loaded, loading, getGallery } = this.props;
+        !loaded && !loading && getGallery();
     }
 
     _galleryAlbum( gallery ){
@@ -35,26 +35,39 @@ class Gallery extends Component {
     }
 
     _galleryPreview( preview, cb ){
-        return preview.previewDisplay ? <Preview 
-                                            display={ preview.previewDisplay } 
-                                            img={ preview.previewImg } 
-                                            close={ cb }/> : null
+        return preview.previewDisplay 
+            ? <Preview 
+                display={ preview.previewDisplay } 
+                img={ preview.previewImg } 
+                close={ cb }/> : null
     }
 
     render(){
-        const { gallery, preview, closePreviewAction } = this.props;
-        let album = this._galleryAlbum( gallery );
-        let previewContent = this._galleryPreview( preview, closePreviewAction )
+        const { loading, gallery, preview, closePreviewAction } = this.props;
+        let album = !loading && this._galleryAlbum( gallery );
+        // let previewContent = this._galleryPreview( preview, closePreviewAction )
 
         return (
             <div className="gallery">
+                { loading && (
+                    <h2>Идет загрузка галлереи</h2>
+                )}
                 { album }
-                { previewContent }
+                
             </div>
         )
     }
 }
 
-Gallery.propTypes = propTypes;
+GalleryList.propTypes = {
+    gallery: PropTypes.array,
+    preview: PropTypes.object.isRequired,
+    closePreviewAction: PropTypes.func
+};
 
-export default Gallery;
+GalleryList.defaultProps = {
+    gallery: [],
+    preview: {}
+}
+
+export default GalleryList;

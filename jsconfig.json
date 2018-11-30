@@ -9,7 +9,8 @@
         "organisms/*": ["src/js/ui/organisms/*"],
         "features/*": ["src/js/features/*"],
         "utils/*": ["src/js/utils/*"],
-        "img/*": ["src/assets/img"]
+        "img/*": ["src/assets/img/*"],
+        "templates/*": ["src/js/ui/templates/*"] 
       }
     },
     "exclude": ["node_modules", "dist"]

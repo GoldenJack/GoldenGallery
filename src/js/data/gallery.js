@@ -1,4 +1,4 @@
-export const gallery  = [
+export const galleryData  = [
     {   
         "id": 'landscape',
         "key": 1,

@@ -5,11 +5,6 @@ import Search from 'atoms/Search'
 import User from 'organisms/User'
 import List from 'atoms/List'
 
-const propTypes = {
-    user: PropTypes.object.isRequired,
-    gallery: PropTypes.array.isRequired,
-    searchItemAction: PropTypes.func.isRequired
-}
 
 class Account extends Component {
     _getMenu( gallery ) {
@@ -52,6 +47,15 @@ class Account extends Component {
     }
 }
 
-Account.propTypes = propTypes;
+Account.propTypes = {
+    user: PropTypes.object.isRequired,
+    gallery: PropTypes.array.isRequired,
+    searchItemAction: PropTypes.func
+};
+
+Account.defaultProps = {
+    user: {},
+    gallery: []
+}
 
 export default Account;

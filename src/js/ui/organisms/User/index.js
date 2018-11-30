@@ -22,7 +22,6 @@ class User extends Component {
 
         let uploadUrl = '/upload'
         let size = 'md';
-
         return (
             <div { ...cn('') }>
                 <Avatar image={ avatar } size={ size } mix={ cn('avatar').className }/>

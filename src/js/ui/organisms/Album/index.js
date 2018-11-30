@@ -48,7 +48,7 @@ class Album extends Component {
     }
 
     render(){
-        const { photos, name, album, parrent } = this.props;
+        const { photos, name, album, parrent, loading } = this.props;
 
         let albumCount = this._photoCount( photos );
         let content = this._photoDisplay( photos, parrent, album );

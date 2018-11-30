@@ -12,17 +12,31 @@ class CommentAdd extends Component {
     constructor(props){
         super(props)
 
-        this.state = {
-            comment: ''
-        }
+        this.handleFocus = this.handleFocus.bind(this)
+        this.handleBlur = this.handleBlur.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    
 
-        this.handleChange = this.handleChange.bind(this)
+    handleFocus(){
+        let fake = event.target.nextElementSibling;
+        if(!fake.classList.contains('hidden')){
+            fake.classList.add('hidden')
+        }
     }
 
-    handleChange( text ){
-        return this.setState({
-            comment: text.target.value
-        })
+    handleBlur(){
+        let fake = event.target.nextElementSibling;
+        let text = event.target.innerText;
+        if(fake.classList.contains('hidden' && text)){
+            fake.classList.remove('hidden')
+        }
+    }
+
+    handleSubmit(){
+        event.preventDefault();
+
+        console.log()
     }
 
     render(){
@@ -31,11 +45,11 @@ class CommentAdd extends Component {
         return (
             <div { ...cn('', '', mix) } >
                 <Avatar size="xs" mix={ cn('avatar').className } image="img/avatar.png" />
-                <form onChange={ this.handleSubmit } { ...cn('form') } >
-                    <textarea 
-                        type="text" { ...cn('textarea') } 
-                        value={ this.state.comment } 
-                        onChange={ this.handleChange }/>
+                <form onSubmit={ this.handleSubmit } { ...cn('form') } >
+                    <div { ...cn('textarea') } onClick={ this.handleClick } onFocus={ this.handleFocus } role="textbox" contentEditable="true" aria-multiline="true" onBlur={ this.handleBlur }>
+                    </div>
+                    <span { ...cn('fake') }>Оставьте свой комментарий...</span>
+                    <button { ...cn('button') } type="submit">Д</button>
                 </form>
             </div>
         )

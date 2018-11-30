@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { gallery } from '../../data/gallery'
 import bemHelper from 'utils/bem-helper'
 import './style.scss'
 
@@ -14,25 +13,16 @@ const cn = bemHelper('photo-page');
 class PhotoPage extends Component {
     constructor(props){
         super(props)
-
-        this.state = {
-            title: '',
-            image: '',
-            comments: []
-        }
     }
 
-    static getDerivedStateFromProps(props){
-        const { number, album } = props.match.params;
-        const [filteredAlbum] = gallery.filter(albumData => albumData.id === album);
-        const [filteredPhoto] = filteredAlbum.photos.filter(({ id }) => id === +number);
-        const { title, image, comments, countLikes } = filteredPhoto;
-        return { title, image, comments, countLikes }
+    componentDidMount(){
+        const { getPhoto, loaded } = this.props;
+        const { album, id } = this.props.match.params;
+        !loaded && getPhoto( album, id );
     }
 
     render(){
-        const { title, image, comments, countLikes } = this.state;
-
+        const { photo: { image, title, comments, countLikes } } = this.props;
         return (
             <div { ...cn('') }>
                 <div { ...cn('content') }>
