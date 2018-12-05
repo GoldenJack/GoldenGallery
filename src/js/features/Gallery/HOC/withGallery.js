@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import T from 'prop-types';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { bindActionCreators, compose } from 'redux';
 import { 
@@ -7,7 +7,6 @@ import {
 } from 'features/Gallery/redux-store/entites/List'
 
 function mapStateToProps(state) {
-    console.log(state)
   return {
     gallery: state.gallery
   };

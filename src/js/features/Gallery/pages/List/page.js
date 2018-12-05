@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Album from 'organisms/Album';
 import PropTypes from 'prop-types';
-import Preview from 'atoms/Preview';
 import Preloader from 'atoms/Preloader';
 import './style.scss';
 
@@ -23,7 +22,7 @@ class GalleryList extends Component {
                     key={ galleryAlbum.key } 
                     name={ galleryAlbum.titleRu } 
                     photos={ galleryAlbum.photos }
-                    preview={ this.props.previewPhotoAction }
+                    preview={ this.props.previewOpen }
                     album={ galleryAlbum.id } 
                     parrent={ 'gallery' }/>
             )
@@ -36,18 +35,9 @@ class GalleryList extends Component {
         }
     }
 
-    _galleryPreview( preview, cb ){
-        return preview.previewDisplay 
-            ? <Preview 
-                display={ preview.previewDisplay } 
-                img={ preview.previewImg } 
-                close={ cb }/> : null
-    }
-
     render(){
-        const { loading, gallery, preview, closePreviewAction } = this.props;
+        const { loading, gallery } = this.props;
         let album = !loading && this._galleryAlbum( gallery );
-        // let previewContent = this._galleryPreview( preview, closePreviewAction )
 
         return (
             <Fragment >

@@ -45,10 +45,8 @@ export const getGallery = () => dispatch  => {
     try {
         dispatch({ type: GET + GALLERY + START });
         let res;
-        setTimeout(() => {
-            res = galleryData
-            dispatch({ type: GET + GALLERY + SUCCESS, data: res });
-        }, 30000 )
+        res = galleryData
+        dispatch({ type: GET + GALLERY + SUCCESS, data: res });
     } catch ( error ) {
         dispatch({ type: GET + GALLERY + FAIL, data: ['404'] });
     }

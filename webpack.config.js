@@ -100,13 +100,14 @@ module.exports = {
 		  atoms: path.resolve(__dirname, 'src/js/ui/atoms'),
 		  molecules: path.resolve(__dirname, 'src/js/ui/molecules'),
 		  organisms: path.resolve(__dirname, 'src/js/ui/organisms'),
-		  features: path.resolve(__dirname, 'src/js/features'),
-		  utils: path.resolve(__dirname, 'src/js/utils'),
-		  img: path.resolve(__dirname, 'src/assets/img'),
 		  templates: path.resolve(__dirname, 'src/js/ui/templates'),
-		  data: path.resolve(__dirname, 'src/js/data'),
+		  features: path.resolve(__dirname, 'src/js/features'),
 		  constants: path.resolve(__dirname, 'src/js/constants'),
-		  store: path.resolve(__dirname, 'src/js/store')
+		  utils: path.resolve(__dirname, 'src/js/utils'),
+		  data: path.resolve(__dirname, 'src/js/data'),
+		  store: path.resolve(__dirname, 'src/js/store'),
+		  img: path.resolve(__dirname, 'src/assets/img'),
+		  HOC: path.resolve(__dirname, 'src/js/HOC')
 		}
 	},
     devtool: "source-map"

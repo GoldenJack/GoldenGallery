@@ -1,9 +1,10 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import withPreview from 'HOC/Preview/withPreview';
 import { 
     getGallery
-} from 'features/Gallery/redux-store/entites/List'
-import Page from './page'
+} from 'features/Gallery/redux-store/entites/List';
+import Page from './page';
 
 
 function mapStateToProps(state) {
@@ -34,5 +35,5 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Page)
+)(withPreview(Page))
 
