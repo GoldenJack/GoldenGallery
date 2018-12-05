@@ -36,7 +36,7 @@ let countFiles = ( recount, arr ) => {
 }
 
 const Counter = ({ mix, recount, arr }) => (
-    <span { ...cn('', '', mix) }>{ countFiles( recount, arr ) }</span>
+    <span { ...cn('', '', mix) }>{ countFiles( recount, arr ) || 0 }</span>
 )
 
 Counter.propTypes = {
@@ -46,6 +46,10 @@ Counter.propTypes = {
         PropTypes.array ]).isRequired,
     mix: PropTypes.string,
     arr: PropTypes.string
+}
+
+Counter.defaultProps = {
+    recount: 0
 }
 
 export default Counter;

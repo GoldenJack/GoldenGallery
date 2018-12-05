@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import Page from './page';
 
 function mapStateToProps(state) {
-    return {}
+    return {
+
+    }
 }
 
 function mapDispatchToProps(dispatch) {

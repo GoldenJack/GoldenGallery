@@ -1,19 +1,11 @@
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Account from './Account';
 
-import Account from './Account'
-
-const mapStateToProps = store => {
-    return { }
+function mapStateToProps(state) {
+  const { entities: gallery } = state.gallery;
+  return { gallery };
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        // searchItemAction: e => dispatch(searchItem(e))
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Account)
+export default connect(mapStateToProps, null)(Account);

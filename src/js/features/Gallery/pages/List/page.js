@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
-import Album from 'organisms/Album/index'
-import PropTypes from 'prop-types'
-import Preview from 'atoms/Preview'
+import React, { Component, Fragment } from 'react';
+import Album from 'organisms/Album';
+import PropTypes from 'prop-types';
+import Preview from 'atoms/Preview';
+import Preloader from 'atoms/Preloader';
+import './style.scss';
 
 
 class GalleryList extends Component {
@@ -48,13 +50,14 @@ class GalleryList extends Component {
         // let previewContent = this._galleryPreview( preview, closePreviewAction )
 
         return (
-            <div className="gallery">
-                { loading && (
-                    <h2>Идет загрузка галлереи</h2>
-                )}
-                { album }
-                
-            </div>
+            <Fragment >
+                <Preloader loading={ loading } />
+                { !loading && (
+                    <div className="gallery animated fadeIn">
+                        { album }
+                    </div>
+                ) }
+            </Fragment>
         )
     }
 }

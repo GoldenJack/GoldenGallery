@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
 import Search from 'atoms/Search'
 import User from 'organisms/User'
-import List from 'atoms/List'
+import SideMenu from 'molecules/SideMenu';
 
 
 class Account extends Component {
-    _getMenu( gallery ) {
-        let menuGallery = [];
-        gallery.map( ( item ) => {
-            return menuGallery.push({
-                        "title": item.titleRu,
-                        "pathName": `/gallery/${item.id}`,
-                        "key": item.key
-                    })
-        } ) 
-        return menuGallery;
-    }
+    // _getMenu( gallery ) {
+    //     let menuGallery = [];
+    //     gallery.map( ( item ) => {
+    //         return menuGallery.push({
+    //                     "title": item.titleRu,
+    //                     "pathName": `/gallery/${item.id}`,
+    //                     "key": item.key
+    //                 })
+    //     } ) 
+    //     return menuGallery;
+    // }
 
     render(){
-        const { user, gallery, searchItemAction } = this.props
+        const { user, gallery } = this.props;
 
         let menu = [
             {
@@ -29,7 +28,7 @@ class Account extends Component {
                 "key": 0
             }
         ]
-        let menuGallery = this._getMenu( gallery )
+        // let menuGallery = this._getMenu( gallery )
 
         return (
             <div className="account">
@@ -39,9 +38,8 @@ class Account extends Component {
                     button={ user.button }
                     recount={ gallery }/>
 
-                <Search searchFunc={ searchItemAction }/>
-                <List title={ 'Menu' } menuLinks={ menu } />
-                <List title={ 'Галлерея' } menuLinks={ menuGallery } />
+                <Search />
+                <SideMenu menu={ menu } />
             </div>
         )
     }
@@ -49,8 +47,7 @@ class Account extends Component {
 
 Account.propTypes = {
     user: PropTypes.object.isRequired,
-    gallery: PropTypes.array.isRequired,
-    searchItemAction: PropTypes.func
+    gallery: PropTypes.array.isRequired
 };
 
 Account.defaultProps = {

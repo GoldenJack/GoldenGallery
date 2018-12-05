@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { 
-    getGallery 
+    getGallery
 } from 'features/Gallery/redux-store/entites/List'
 import Page from './page'
 

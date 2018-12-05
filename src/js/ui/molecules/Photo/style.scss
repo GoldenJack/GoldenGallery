@@ -59,3 +59,14 @@
 
     transition: ease-in-out .5s;
 }
+
+.anim-appear {
+    opacity: .1;
+    transform: scale(.5);
+}
+   
+.anim-appear.anim-appear-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform .7s ease-in;
+}
