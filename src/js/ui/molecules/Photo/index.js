@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import bemHelper from 'utils/bem-helper';
 import Croppie from 'croppie';
-import { Link } from 'react-router-dom'
-import Image from 'atoms/Image'
+import { Link } from 'react-router-dom';
+import Image from 'atoms/Image';
+import Icon from 'atoms/Icon';
 
 import './style.scss'
 
@@ -16,35 +17,13 @@ class Photo extends Component {
 
         this.photo = React.createRef()
     }
-
-    _resizePhoto(){
-        let box = this.photo.current;
-        let boxWidth = box.offsetWidth;
-        let image = box.querySelector('.photo__image')
-
-        let photo = new Croppie()
-
-        //TODO: не работает конструктор
-    }
-
-    componentDidMount(){
-        // this._resizePhoto()
-    }
-
-    getAnimationDuration() {
-        return Math.floor(Math.random() * (2.5 - 0.5 + 0.5)) + 1;
-    }
     
 
     render(){
         const { title, image, preview, size, url } = this.props;
-        const animation = {
-            animationDuration: `${this.getAnimationDuration()}s`
-        }
         
         return (
-            <div { ...cn('', size.toString(), '') } 
-                style={ animation }
+            <div { ...cn('', size.toString(), 'animated jello') }
                 ref={ this.photo }> 
                 <div { ...cn('content') }>
                     <Image image={ image } mix={ cn('image').className } preview={ preview }/>

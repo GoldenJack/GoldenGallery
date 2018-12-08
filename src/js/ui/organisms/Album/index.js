@@ -24,7 +24,7 @@ class Album extends Component {
                                 image={ photo.image } 
                                 preview={ this.props.preview }
                                 url={ url }
-                                size={ 5 }/>
+                                size={ this.props.size }/>
                 }
             })
 

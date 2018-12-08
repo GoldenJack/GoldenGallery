@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Search from 'atoms/Search'
 import User from 'organisms/User'
 import SideMenu from 'molecules/SideMenu';
+import Range from 'atoms/Range';
 
 
 class Account extends Component {
@@ -19,7 +20,7 @@ class Account extends Component {
     // }
 
     render(){
-        const { user, gallery } = this.props;
+        const { user, gallery, size, reSizeGallery } = this.props;
 
         let menu = [
             {
@@ -40,6 +41,8 @@ class Account extends Component {
 
                 <Search />
                 <SideMenu menu={ menu } />
+
+                <Range value={ size } reSize={ reSizeGallery }/>
             </div>
         )
     }

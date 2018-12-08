@@ -13,3 +13,4 @@ export const ERROR = '_ERROR';
 export const RESET = '_RESET';
 
 export const SEARCH = 'SEARCH_';
+export const SET = 'SET_';

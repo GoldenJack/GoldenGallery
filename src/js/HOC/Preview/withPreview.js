@@ -1,7 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import Preview from 'atoms/Preview';
 
 
@@ -12,16 +9,21 @@ const withPreview = WrappedComponent => class extends Component {
   };
 
   previewOpen = (e) => {
-    console.log(e.target.src)
     this.setState({
       previewDisplay: true,
       previewImg: e.target.src
     })
   }
 
+  previewClose = () => {
+    this.setState({
+      previewDisplay: false
+    })
+  }
+
   render() {
     const { ...wrappedComponentProps } = this.props;
-    const { previewDisplay, previewImg } = this.state;
+    const { previewImg, previewDisplay } = this.state;
     
     return (
       <Fragment>
@@ -30,7 +32,7 @@ const withPreview = WrappedComponent => class extends Component {
           previewOpen={this.previewOpen}
         />
         {previewDisplay && (
-          <Preview img={ previewImg }/>
+          <Preview img={ previewImg } display={ previewDisplay } close={ this.previewClose }/>
         )}
       </Fragment>
     );

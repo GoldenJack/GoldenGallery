@@ -23,7 +23,8 @@ class GalleryList extends Component {
                     name={ galleryAlbum.titleRu } 
                     photos={ galleryAlbum.photos }
                     preview={ this.props.previewOpen }
-                    album={ galleryAlbum.id } 
+                    album={ galleryAlbum.id }
+                    size={ this.props.size }
                     parrent={ 'gallery' }/>
             )
             

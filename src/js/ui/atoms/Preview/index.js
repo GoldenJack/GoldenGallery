@@ -5,19 +5,19 @@ import './style.scss'
 
 const cn = bemHelper('preview')
 
-const Preview = ({ img, close, mix }) => (
-    <div { ...cn('', '', mix) }>
+const Preview = ({ img, close, mix, display }) => (
+    <div { ...cn('', '', `${mix} animated ${display ? 'fadeIn' : 'zoomOut'}`) }>
         <span { ...cn('close') } onClick={ close }></span>
-        <div { ...cn('wrap') }>
+        <div { ...cn('overlay') } onClick={ close }/>
+        <div { ...cn('wrap', '', 'animated zoomIn') }>
             <img src={ img } { ...cn('image') }/>
         </div>
     </div>
 )
 
 Preview.propTypes = {
-    display: PropTypes.bool.isRequired,
     img: PropTypes.string.isRequired,
-    close: PropTypes.func.isRequired.propTypes,
+    close: PropTypes.func.isRequired,
     mix: PropTypes.string
 }
 Preview.defaultProps = {

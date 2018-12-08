@@ -97,6 +97,144 @@ export const galleryData  = [
                     }
                 ]
             },
+            {
+                "id": 1.5,
+                "title": "Германия",
+                "image": "img/photo/landscape/1.jpg",
+                "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 1.6,
+                "title": "Гержиния",
+                "image": "img/photo/landscape/2.jpg",
+                "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
+                "comments": []
+            },
+            {
+                "id": 1.7,
+                "title": "Дания",
+                "image": "img/photo/landscape/2.jpg",
+                "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
+                "comments": []
+            },
+            {
+                "id": 1.8,
+                "title": "Изображение номер 4",
+                "image": "img/photo/landscape/4.jpg",
+                "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 1.9,
+                "title": "Дания",
+                "image": "img/photo/landscape/2.jpg",
+                "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
+                "comments": []
+            },
+            {
+                "id": 1.10,
+                "title": "Изображение номер 4",
+                "image": "img/photo/landscape/4.jpg",
+                "display": true,
+                "date": '25.11.2018',
+                "likes": '20',
+                "comments": [
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    },
+                    {
+                        "author": {
+                            "name": "Jack"
+                        },
+                        "comment": {
+                            "date": "Now",
+                            "text": "Шикарное фото"
+                        }
+                    }
+                ]
+            },
         ]
     },
     {   

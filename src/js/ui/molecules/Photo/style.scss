@@ -12,6 +12,21 @@
     &--5 {
         flex: 0 0 calc( 100% / 5 )
     }
+    &--6 {
+        flex: 0 0 calc( 100% / 6 )
+    }
+    &--7 {
+        flex: 0 0 calc( 100% / 7 )
+    }
+    &--8 {
+        flex: 0 0 calc( 100% / 8 )
+    }
+    &--9 {
+        flex: 0 0 calc( 100% / 9 )
+    }
+    &--10 {
+        flex: 0 0 calc( 100% / 10 )
+    }
 }
 .photo__content {
     position: relative;

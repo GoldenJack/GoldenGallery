@@ -1,13 +1,15 @@
 import { galleryData } from 'data/gallery';
-import { START, SUCCESS, FAIL, SEARCH, GET } from 'constants/common';
+import { START, SUCCESS, FAIL, SEARCH, GET, SET } from 'constants/common';
 
 const GALLERY = 'GALLERY';
 const BY_NAME = 'BY_NAME';
+const SIZE = 'SIZE';
 
 const initialState = {
     loading: false,
     loaded: false,
     error: false,
+    size: 4,
     entities: []
 }
 
@@ -37,6 +39,10 @@ export default (gallery = initialState, { type, data }) => {
             return { 
               ...gallery, loading: false, loaded: false, error: data
             }
+        case SET + SIZE:
+            return {
+                ...gallery, size: data
+            }
         default: return gallery
     }
 }
@@ -45,8 +51,10 @@ export const getGallery = () => dispatch  => {
     try {
         dispatch({ type: GET + GALLERY + START });
         let res;
-        res = galleryData
-        dispatch({ type: GET + GALLERY + SUCCESS, data: res });
+        setTimeout(() => {
+            res = galleryData
+            dispatch({ type: GET + GALLERY + SUCCESS, data: res })
+        }, 3000);
     } catch ( error ) {
         dispatch({ type: GET + GALLERY + FAIL, data: ['404'] });
     }
@@ -72,4 +80,8 @@ export const getGalleryByTitle = value => (dispatch, getState)  => {
     } catch ( error ) {
         dispatch({ type: GET + GALLERY + FAIL, data: ['404'] });
     }
+}
+
+export const reSizeGallery = (value) => dispatch => {
+    dispatch({ type: SET + SIZE, data: value })
 }

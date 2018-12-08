@@ -12,12 +12,14 @@ function mapStateToProps(state) {
         loading,
         loaded,
         error,
+        size,
         entities: gallery
     } = state.gallery;
     return {
         loading,
         loaded,
         error,
+        size,
         gallery
     }
 }
