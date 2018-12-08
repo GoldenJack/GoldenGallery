@@ -9,13 +9,13 @@ class SideMenu extends Component {
 
 
     render() {
-        const { title, menu, isSubMenu, subMenuTitle, subMenu } = this.props;
+        const { title, menu, isSubMenu, subMenuTitle, subMenu, loaded } = this.props;
         return (
             <Fragment >
-            <Menu title={ title } menu={ menu } />
-            { isSubMenu && (
-                <Menu title={ subMenuTitle } menu={ subMenu } />
-            ) }
+                <Menu title={ title } menu={ menu } />
+                { isSubMenu && loaded && (
+                    <Menu title={ subMenuTitle } menu={ subMenu } />
+                ) }
             </Fragment>
         )
     }

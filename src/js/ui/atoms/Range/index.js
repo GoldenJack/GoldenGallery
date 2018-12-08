@@ -17,26 +17,32 @@ class Range extends Component {
     })
   }
 
-  changeRange = () => (e) => {
+  changeRange = (size) => (e) => {
     const { reSize } = this.props;
+    const value = size || e.target.value;
     this.setState({
-      range: e.target.value
+      range: value
     })
-    reSize(e.target.value);
+    reSize(value);
   }
 
   render(){
-    const { value } = this.props;
+    const { range } = this.state;
 
     return (
-      <input
-        { ...cn('') }
-        type="range" 
-        min="1" 
-        max="10" 
-        value={ value } 
-        onChange={ this.changeRange(value) } 
-        step="1" />
+      <div {...cn()}>
+        <div {...cn('btn_smaller')} role="none" onClick={ this.changeRange(1) }></div>
+        <input
+          { ...cn('input') }
+          type="range" 
+          min="1" 
+          max="10" 
+          value={ range } 
+          onChange={ this.changeRange() } 
+          step="1"
+        />
+        <div {...cn('btn_bigger')} role="none" onClick={ this.changeRange(10) }></div>
+      </div>
     )
   }
   

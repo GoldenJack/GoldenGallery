@@ -199,7 +199,7 @@ export const galleryData  = [
                 "comments": []
             },
             {
-                "id": 1.10,
+                "id": 1.11,
                 "title": "Изображение номер 4",
                 "image": "img/photo/landscape/4.jpg",
                 "display": true,

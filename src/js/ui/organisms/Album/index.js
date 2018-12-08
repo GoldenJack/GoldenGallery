@@ -9,11 +9,7 @@ const cn = bemHelper('album');
 
 
 class Album extends Component {
-    constructor(props){
-        super(props);
-    }
-
-    _photoDisplay( photos, parrent, album ){
+    _photoRender( photos, parrent, album ){
         if( photos.length ){
             let result = photos.map(( photo )=>{ 
                 if( photo.display ){
@@ -51,7 +47,7 @@ class Album extends Component {
         const { photos, name, album, parrent, loading } = this.props;
 
         let albumCount = this._photoCount( photos );
-        let content = this._photoDisplay( photos, parrent, album );
+        let content = this._photoRender( photos, parrent, album );
 
         return (
             <div { ...cn('') }>

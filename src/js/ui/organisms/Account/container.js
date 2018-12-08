@@ -1,13 +1,25 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { 
-  reSizeGallery
+  reSizeGallery,
+  getGallery
 } from 'features/Gallery/redux-store/entites/List';
 import Account from './Account';
 
 function mapStateToProps(state) {
-  const { size } = state.gallery;
-  return { size };
+  const {
+    loaded,
+    loading,
+    entities: gallery, 
+    size
+  } = state.gallery;
+  return {
+    loaded,
+    loading,
+    size,
+    gallery,
+    
+  };
 }
 
 const mapDispatchToProps = dispatch => {

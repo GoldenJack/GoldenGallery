@@ -3,11 +3,16 @@ import { Route } from 'react-router';
 import PropTypes from 'prop-types';
 import List from './pages/List';
 import Photo from './pages/Photo';
+import Album from './pages/Album';
 
 const ROUTES = [
     {
         path: '/gallery',
         component: List
+    },
+    {
+        path: '/gallery/:album',
+        component: Album
     },
     {
         path: '/gallery/:album/:id',

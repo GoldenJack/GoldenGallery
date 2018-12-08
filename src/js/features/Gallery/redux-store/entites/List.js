@@ -1,5 +1,5 @@
 import { galleryData } from 'data/gallery';
-import { START, SUCCESS, FAIL, SEARCH, GET, SET } from 'constants/common';
+import { START, SUCCESS, FAIL, GET, SET } from 'constants/common';
 
 const GALLERY = 'GALLERY';
 const BY_NAME = 'BY_NAME';
