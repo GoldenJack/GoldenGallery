@@ -1,15 +1,15 @@
 .like {
-    display: flex;
-    align-items: center;
-    &__image {
-        max-width: 24px;
-        margin-right: 8px;
-        cursor: pointer;
-        
-        transition: ease-in-out .3s;
+  display: flex;
+  align-items: center;
+  &__image {
+    max-width: 24px;
+    margin-right: 8px;
+    cursor: pointer;
+    
+    transition: ease-in-out .3s;
 
-        &:hover {
-            transform: scale(1.1)
-        }
+    &:hover {
+      transform: scale(1.1)
     }
+  }
 }

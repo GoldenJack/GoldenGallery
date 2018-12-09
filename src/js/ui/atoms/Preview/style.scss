@@ -1,60 +1,60 @@
 .preview {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
 }
 .preview__wrap {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 800px;
-    width: 100%;
-    max-height: 600px;
-    height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 800px;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
 }
 .preview__overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.8;
-    z-index: -9;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  z-index: -9;
 }
 .preview__image {
-    width: 100%;
+  width: 100%;
 }
 .preview__close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    cursor: pointer;
-    background: rgb(110, 107, 107);
-    opacity: .3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  cursor: pointer;
+  background: rgb(110, 107, 107);
+  opacity: .3;
+  transition: ease-in-out .3s;
+  &:before {
+    content: '';
+    background: url(~/img/close.png) no-repeat;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: ease-in-out .3s;
+  }
+  &:hover {
+    opacity: 1;
     transition: ease-in-out .3s;
     &:before {
-        content: '';
-        background: url(~/img/close.png) no-repeat;
-        background-size: cover;
-        display: block;
-        width: 100%;
-        height: 100%;
-        transition: ease-in-out .3s;
+      transform: rotate(90deg);
+      transition: ease-in-out .3s;
     }
-    &:hover {
-        opacity: 1;
-        transition: ease-in-out .3s;
-        &:before {
-            transform: rotate(90deg);
-            transition: ease-in-out .3s;
-        }
-    }
+  }
 }

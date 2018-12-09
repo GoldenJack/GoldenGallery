@@ -1,8 +1,8 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-    getGalleryByTitle
-} from 'features/Gallery/redux-store/entites/List'
+  getGalleryByTitle
+} from 'features/Gallery/redux-store/entites/List';
 import Search from './Search';
 
 function mapStateToProps(state) {
@@ -11,13 +11,13 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    const actions = bindActionCreators(
-        {
-            getGalleryByTitle
-        },
-        dispatch
-    );
-    return { ...actions }
+  const actions = bindActionCreators(
+    {
+      getGalleryByTitle
+    },
+    dispatch
+  );
+  return { ...actions };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

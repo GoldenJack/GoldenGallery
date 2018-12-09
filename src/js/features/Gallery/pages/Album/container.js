@@ -13,11 +13,15 @@ const mapStateToProps = state => {
     error,
     entities: album
   } = state.galleryAlbum;
+  const {
+    size
+  } = state.gallery
   return {
     loading,
     loaded,
     error,
-    album
+    album,
+    size
   }
 }
 

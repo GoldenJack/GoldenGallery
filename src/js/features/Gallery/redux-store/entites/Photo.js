@@ -47,21 +47,3 @@ export const getPhoto = ( album, id ) => dispatch  => {
         dispatch({ type: GET + PHOTO + FAIL, data: ['404'] });
     }
 }
-
-// getDerivedStateFromProps(props) {
-//   const { number, album } = props.match.params;
-//   const [filteredAlbum] = gallery.filter(albumData => albumData.id === album);
-//   const [filteredPhoto] = filteredAlbum.photos.filter(({ id }) => id === +number);
-//   const { title, image, comments, countLikes } = filteredPhoto;
-//   return { title, image, comments, countLikes }
-// }
-
-// export const fetchBusinessPartner = (id) => async dispatch => {
-//     try {
-//       dispatch({ type: FETCH + BUSINESS_PARTNER + START });
-//       const res = await api.businessPartners.getById(id);
-//       dispatch({ type: FETCH + BUSINESS_PARTNER + SUCCESS, data: res });
-//     } catch (error) {
-//       dispatch({ type: FETCH + BUSINESS_PARTNER + FAIL, data: error });
-//     }
-//   };

@@ -12,19 +12,19 @@ const withPreview = WrappedComponent => class extends Component {
     this.setState({
       previewDisplay: true,
       previewImg: e.target.src
-    })
+    });
   }
 
   previewClose = () => {
     this.setState({
       previewDisplay: false
-    })
+    });
   }
 
   render() {
     const { ...wrappedComponentProps } = this.props;
     const { previewImg, previewDisplay } = this.state;
-    
+
     return (
       <Fragment>
         <WrappedComponent
@@ -32,7 +32,7 @@ const withPreview = WrappedComponent => class extends Component {
           previewOpen={this.previewOpen}
         />
         {previewDisplay && (
-          <Preview img={ previewImg } display={ previewDisplay } close={ this.previewClose }/>
+          <Preview img={previewImg} display={previewDisplay} close={this.previewClose} />
         )}
       </Fragment>
     );
