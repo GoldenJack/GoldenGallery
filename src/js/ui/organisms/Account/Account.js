@@ -11,56 +11,46 @@ const cn = bemHelper('account');
 
 
 class Account extends Component {
-    _getMenu() {
-        const { gallery } = this.props;
-        let menuGallery = [];
-        gallery.map( ( item ) => {
-            return menuGallery.push({
-                "title": item.titleRu,
-                "pathName": `/gallery/${item.id}`,
-                "key": item.id
-            })
-        } ) 
-        return menuGallery;
-    }
+  render(){
+    const { 
+      user, 
+      gallery, 
+      reSizeGallery, 
+      loaded,
+      isSubMenu,
+      subMenu,
+      menu  
+    } = this.props;
 
-    render(){
-        const { user, size, gallery, reSizeGallery, loaded } = this.props;
-        const subMenu = loaded && this._getMenu();
-
-        let menu = [
-            {
-                "title": 'Галлерея', 
-                "pathName": '/gallery', 
-                "key": 0
-            }
-        ]
-
-        return (
-            <div {...cn()}>
-                <User 
-                    name={ user.name }
-                    avatar={ user.avatar } 
-                    button={ user.button }
-                    recount={ gallery }/>
-
-                <Search />
-                <SideMenu isSubMenu={true} loaded={loaded} subMenu={subMenu} menu={ menu } />
-
-                <Range reSize={ reSizeGallery }/>
-            </div>
-        )
-    }
+    return (
+      <div {...cn()}>
+        <User 
+          name={ user.name }
+          avatar={ user.avatar } 
+          button={ user.button }
+          recount={ gallery }
+        />
+        <Search />
+        <SideMenu 
+            isSubMenu={isSubMenu} 
+            loaded={loaded} 
+            subMenu={subMenu} 
+            menu={ menu } 
+        />
+        <Range reSize={ reSizeGallery }/>
+      </div>
+    )
+  }
 }
 
 Account.propTypes = {
-    user: PropTypes.object.isRequired,
-    gallery: PropTypes.array.isRequired
+  user: PropTypes.object.isRequired,
+  gallery: PropTypes.array.isRequired
 };
 
 Account.defaultProps = {
-    user: {},
-    gallery: []
+  user: {},
+  gallery: []
 }
 
 export default Account;

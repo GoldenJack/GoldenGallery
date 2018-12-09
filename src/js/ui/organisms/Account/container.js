@@ -1,8 +1,8 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import withMenu from 'HOC/menu/withMenu';
 import { 
-  reSizeGallery,
-  getGallery
+  reSizeGallery
 } from 'features/Gallery/redux-store/entites/List';
 import Account from './Account';
 
@@ -10,15 +10,12 @@ function mapStateToProps(state) {
   const {
     loaded,
     loading,
-    entities: gallery, 
     size
   } = state.gallery;
   return {
     loaded,
     loading,
-    size,
-    gallery,
-    
+    size
   };
 }
 
@@ -32,4 +29,4 @@ const mapDispatchToProps = dispatch => {
   return { ...actions }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Account);
+export default connect(mapStateToProps, mapDispatchToProps)(withMenu(Account));

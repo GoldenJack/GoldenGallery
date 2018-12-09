@@ -11,10 +11,10 @@ const cn = bemHelper('page');
 
 class defaultPage extends Component {
     render() {
-        const { children, theme } = this.props;
+        const { children, theme, location: {pathname} } = this.props;
         return (
             <div { ...cn('', theme, 'container flex') }>
-                    <Account/>
+                    <Account page={ pathname }/>
                     <div className="content">
                         { children }
                     </div>
