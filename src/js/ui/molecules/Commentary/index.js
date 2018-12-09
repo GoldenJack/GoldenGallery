@@ -1,30 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import bemHelper from 'utils/bem-helper'
-import Avatar from 'molecules/Avatar'
+import React from 'react';
+import PropTypes from 'prop-types';
+import bemHelper from 'utils/bem-helper';
+import Avatar from 'molecules/Avatar';
 
-import './style.scss'
+import './style.scss';
 
 const cn = bemHelper('comment');
 
 
 const Commentary = ({ name, date, text }) => (
-    <div { ...cn('') }>
-        <Avatar 
-            mix={ cn('avatar').className }
-            size={ 'xs' } />
-        <div { ...cn('body') }>
-            <div { ...cn('head') }>
-                <span { ...cn('name') }> { name } </span>
-                <span { ...cn('date') }> { date } </span>
-            </div>
-            <p { ...cn('text') }>{ text }</p>
-        </div>
+  <div {...cn('')}>
+    <Avatar
+      mix={cn('avatar').className}
+      size="xs"
+    />
+    <div {...cn('body')}>
+      <div {...cn('head')}>
+        <span {...cn('name')}> { name } </span>
+        <span {...cn('date')}> { date } </span>
+      </div>
+      <p {...cn('text')}>{ text }</p>
     </div>
-)
+  </div>
+);
 
 Commentary.propTypes = {
-    
-}
+  name: PropTypes.string,
+  date: PropTypes.string,
+  text: PropTypes.string.isRequired
+};
+
+Commentary.defaultProps = {
+  name: 'Аноним',
+  date: 'Когда-то'
+};
 
 export default Commentary;
