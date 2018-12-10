@@ -1,3 +1,3 @@
-import defaultPage from './page'
+import defaultPage from './page';
 
 export default defaultPage;
