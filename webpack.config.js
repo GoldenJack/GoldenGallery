@@ -12,12 +12,6 @@ module.exports = {
         path: path.resolve(__dirname, './public/'),
 		filename: 'js/bundle.js'
     },
-
-    devServer: {
-        contentBase: './public',
-        port: 8000
-    },
-
     module: {
         rules: [
             {

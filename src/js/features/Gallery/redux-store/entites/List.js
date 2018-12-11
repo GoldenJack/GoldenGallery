@@ -75,7 +75,6 @@ export const getGalleryByTitle = value => (dispatch, getState)  => {
             })
             return item;
         })
-        
         dispatch({ type: GET + GALLERY + BY_NAME + SUCCESS, data: res });
     } catch ( error ) {
         dispatch({ type: GET + GALLERY + FAIL, data: ['404'] });
