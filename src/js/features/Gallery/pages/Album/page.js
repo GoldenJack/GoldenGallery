@@ -28,7 +28,7 @@ class AlbumPage extends Component {
           photos={ album.photos }
           // preview={ this.props.previewOpen }
           album={ album.id }
-          size={ '4' }
+          size={ this.props.size }
           parrent={ 'gallery' }/>
       )
       

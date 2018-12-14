@@ -10,57 +10,30 @@ import './style.scss';
 const cn = bemHelper('account');
 
 
-class Account extends Component {
-    _getMenu() {
-        const { gallery } = this.props;
-        let menuGallery = [];
-        gallery.map( ( item ) => {
-            return menuGallery.push({
-                "title": item.titleRu,
-                "pathName": `/gallery/${item.id}`,
-                "key": item.id
-            })
-        } ) 
-        return menuGallery;
-    }
-
-    render(){
-        const { user, size, gallery, reSizeGallery, loaded } = this.props;
-        const subMenu = loaded && this._getMenu();
-
-        let menu = [
-            {
-                "title": 'Галлерея', 
-                "pathName": '/gallery', 
-                "key": 0
-            }
-        ]
-
-        return (
-            <div {...cn()}>
-                <User 
-                    name={ user.name }
-                    avatar={ user.avatar } 
-                    button={ user.button }
-                    recount={ gallery }/>
-
-                <Search />
-                <SideMenu isSubMenu={true} loaded={loaded} subMenu={subMenu} menu={ menu } />
-
-                <Range reSize={ reSizeGallery }/>
-            </div>
-        )
-    }
-}
+const Account = ({ user, size, gallery, reSizeGallery, loaded }) => (
+  <div {...cn()}>
+    <User
+      name={user.name}
+      avatar={user.avatar}
+      button={user.button}
+      recount={gallery}
+    />
+    <Search />
+    <SideMenu isSubMenu loaded={loaded} subMenu={subMenu} menu={menu} />
+    <Range reSize={reSizeGallery} value={size} />
+  </div>
+);
 
 Account.propTypes = {
-    user: PropTypes.object.isRequired,
-    gallery: PropTypes.array.isRequired
+  user: PropTypes.object,
+  gallery: PropTypes.array,
+  size: PropTypes.number
 };
 
 Account.defaultProps = {
-    user: {},
-    gallery: []
-}
+  user: {},
+  gallery: [],
+  size: 3
+};
 
 export default Account;

@@ -18,16 +18,15 @@ function mapStateToProps(state) {
     loading,
     size,
     gallery,
-    
   };
 }
 
 const mapDispatchToProps = dispatch => {
   const actions = bindActionCreators(
-      {
-        reSizeGallery
-      },
-      dispatch
+    {
+      reSizeGallery
+    },
+    dispatch
   );
   return { ...actions }
 }

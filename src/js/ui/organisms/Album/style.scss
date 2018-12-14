@@ -1,25 +1,25 @@
 .album {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: 20px;
 }
 .album__caption {
-    padding: 0 10px;
-    margin-bottom: 15px;
+  padding: 0 10px;
+  margin-bottom: 15px;
 }
 .album__count {
-    color:  #c0c0c0;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
+  color:  #c0c0c0;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
 }
 .album__content {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 0 0 100%;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  overflow: hidden;
 }
 .album__content_not-found {
-    padding: 0 10px;
+  padding: 0 10px;
 }
