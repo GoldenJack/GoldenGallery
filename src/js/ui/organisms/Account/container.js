@@ -10,7 +10,7 @@ function mapStateToProps(state) {
   const {
     loaded,
     loading,
-    entities: gallery, 
+    entities: gallery,
     size
   } = state.gallery;
   return {

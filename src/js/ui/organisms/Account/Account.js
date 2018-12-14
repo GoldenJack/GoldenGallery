@@ -10,7 +10,7 @@ import './style.scss';
 const cn = bemHelper('account');
 
 
-const Account = ({ user, size, gallery, reSizeGallery, loaded }) => (
+const Account = ({ user, size, gallery, reSizeGallery, loaded, subenu, menu }) => (
   <div {...cn()}>
     <User
       name={user.name}
@@ -19,7 +19,7 @@ const Account = ({ user, size, gallery, reSizeGallery, loaded }) => (
       recount={gallery}
     />
     <Search />
-    <SideMenu isSubMenu loaded={loaded} subMenu={subMenu} menu={menu} />
+    {/* <SideMenu isSubMenu loaded={loaded} subMenu={subMenu} menu={menu} /> */}
     <Range reSize={reSizeGallery} value={size} />
   </div>
 );

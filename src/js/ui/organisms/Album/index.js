@@ -73,7 +73,7 @@ Album.propTypes = {
   album: PropTypes.string,
   preview: PropTypes.func,
   parrent: PropTypes.string,
-  size: PropTypes.onOfType([
+  size: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]).isRequired

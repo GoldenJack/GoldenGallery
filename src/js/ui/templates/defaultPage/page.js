@@ -12,10 +12,7 @@ const cn = bemHelper('page');
 const defaultPage = ({ children, theme }) => {
   return (
     <div {...cn('', theme, 'container flex')}>
-      <Account />
-      <div className="content">
-        { children }
-      </div>
+      { children }
     </div>
   );
 };
