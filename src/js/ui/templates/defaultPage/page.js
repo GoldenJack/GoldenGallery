@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Account from 'organisms/Account';
 import bemHelper from 'utils/bem-helper';
 
 import './style.scss';
 
 
 const cn = bemHelper('page');
-
 
 const defaultPage = ({ children, theme }) => {
   return (
