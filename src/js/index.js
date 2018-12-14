@@ -9,6 +9,7 @@ import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 import Layout from 'features/Layout'
 import Home from 'features/Home'
 import Gallery from 'features/Gallery'
+import Login from 'features/Login';
 
 library.add(faStroopwafel)
 
@@ -20,6 +21,7 @@ ReactDOM.render(
                 <Layout>
                     <Route exact path="/" component={ Home } />
                     <Route path="/gallery" component={ Gallery } />
+                    <Route path="/login" component={ Login } />
                 </Layout>
             </Switch>
         </BrowserRouter>

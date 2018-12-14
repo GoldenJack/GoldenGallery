@@ -3,4 +3,12 @@
     &__default {
         animation-duration: 1s;
     }
+    &__content--default {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+    &__content--login {
+        width: 100%;
+        height: 100%;
+    }
 }

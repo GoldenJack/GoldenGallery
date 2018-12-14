@@ -1,34 +1,27 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {
-  getHome
-} from './redux-store/entities/home';
 import Page from './page';
-
 
 const mapStateToProps = state => {
   const {
     loading,
     loaded,
     error,
-    entities: home
-  } = state.home
+    entities: album
+  } = state.galleryAlbum;
   return {
-    loaded,
     loading,
+    loaded,
     error,
-    home
+    album
   }
-};
+}
 
 const mapDispatchToProps = dispatch => {
   const actions = bindActionCreators(
-    {
-      getHome
-    },
+    { },
     dispatch
   );
-
   return { ...actions }
 }
 

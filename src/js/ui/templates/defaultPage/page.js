@@ -14,8 +14,10 @@ class defaultPage extends Component {
         const { children, theme } = this.props;
         return (
             <div { ...cn('', theme, 'container flex') }>
-                    <Account/>
-                    <div className="content">
+                    {theme == "default" && (
+                        <Account/>
+                    )}
+                    <div { ...cn('content', theme) }>
                         { children }
                     </div>
             </div>
