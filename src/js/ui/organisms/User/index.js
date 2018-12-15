@@ -5,7 +5,7 @@ import bemHelper from 'utils/bem-helper';
 import './style.scss';
 
 import Avatar from 'molecules/Avatar';
-import Counter from 'atoms/Counter';
+// import Counter from 'atoms/Counter';
 import ButtonUpload from 'atoms/ButtonUpload';
 
 const cn = bemHelper('user');
@@ -17,8 +17,7 @@ class User extends Component {
   }
 
   render() {
-    const { name, recount, button, avatar } = this.props;
-    const arr = 'photos';
+    const { name, button, avatar } = this.props;
 
     const uploadUrl = '/upload';
     const size = 'md';
@@ -26,7 +25,7 @@ class User extends Component {
       <div {...cn('')}>
         <Avatar image={avatar} size={size} mix={cn('avatar').className} />
         <Link to="/edit" className="user__name">{ name }</Link>
-        <Counter recount={recount} arr={arr} mix={cn('counter').className} />
+        {/* <Counter recount={recount} arr={arr} mix={cn('counter').className} /> */}
         <ButtonUpload button={button} mix={cn('btn').className} to={uploadUrl} />
       </div>
     );

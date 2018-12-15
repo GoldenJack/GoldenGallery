@@ -10,30 +10,30 @@ const withMenu = WrappedComponent => class extends Component {
     subMenu: []
   };
 
-  componentDidMount(){
+  componentDidMount() {
     const { loading } = this.props;
     !loading && this._getMenu();
   }
 
   _getMenu() {
     const { page } = this.props;
-    let menu = [];
-    let subMenuArr = [];
+    const menu = [];
+    const subMenuArr = [];
     routes.map(({ name, to, subMenuTitle, subMenu }) => {
       menu.push({
         title: name,
         pathName: to,
         key: name
       })
-      if(page.indexOf(to !== -1) && subMenu.length){
+      if (page.indexOf(to !== -1) && subMenu.length) {
         console.log(page.indexOf(to !== -1))
-        subMenu.map(({ name, to }) => {
+        subMenu.map(({ name, to }) => (
           subMenuArr.push({
             title: name,
             pathName: to,
             key: name
           })
-        })
+        ))
         this.setState({
           isSubMenu: true,
           subMenuTitle,

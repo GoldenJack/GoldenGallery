@@ -1,21 +1,20 @@
-import { connect } from 'react-redux'
-import Page from './page'
+import { connect } from 'react-redux';
+import Page from './page';
 
 
-const mapStateToProps = store => {
-    return {
+const mapStateToProps = state => {
+  return {
 
-    }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
-    return {
+  return {
 
-    }
-}
+  };
+};
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Page)
-
+  mapStateToProps,
+  mapDispatchToProps
+)(Page);
