@@ -1,5 +1,12 @@
 .user {
 
+  &__btn {
+    background-color: #ea5a5a;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    color:  #ffffff;
+  }
+
 }
 .user__avatar {
   margin-bottom: 18px;

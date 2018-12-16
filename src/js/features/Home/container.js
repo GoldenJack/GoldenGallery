@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import withAuth from 'HOC/withAuth';
 import Page from './page';
 
 
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Page);
+)(withAuth(Page));
