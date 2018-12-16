@@ -20,7 +20,17 @@ class Home extends Component {
         <Button text="Войти" effect={showAuth} />
       </div>
     );
+    // const { loaded, getHome } = this.props;
+    // !loaded && getHome();
   }
+  // render(){
+  //   const { home: { value } } = this.props;
+  //   return (
+  //     <div>
+  //       <p>{ value }</p>
+  //     </div>
+  //   )
+  // }
 }
 
 Home.propTypes = {

@@ -102,7 +102,8 @@ module.exports = {
       data: path.resolve(__dirname, 'src/js/data'),
       store: path.resolve(__dirname, 'src/js/store'),
       img: path.resolve(__dirname, 'src/assets/img'),
-      HOC: path.resolve(__dirname, 'src/js/HOC')
+      HOC: path.resolve(__dirname, 'src/js/HOC'),
+      services: path.resolve(__dirname, 'src/js/services/')
     }
   },
   devtool: 'source-map'
