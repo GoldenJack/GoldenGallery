@@ -14,7 +14,7 @@ class Album extends Component {
     if (photos.length) {
       const result = photos.map((photo) => {
         if (photo.display) {
-          const url = `${parrent}/${album}/${photo.id}`;
+          const url = `/${album}/${photo.id}`;
           return (
             <Photo
               key={photo.id}

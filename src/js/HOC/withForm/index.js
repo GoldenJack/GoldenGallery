@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import api from './api';
 
 const withForm = WrappedComponent => class extends Component {
   state = {
@@ -17,6 +16,19 @@ const withForm = WrappedComponent => class extends Component {
     });
   }
 
+  getDataForm = () => {
+    const { ...props } = this.state;
+
+    return {
+      props
+    };
+  }
+
+  onFormSubmit = (actionCallback) => e => {
+    e.preventDefault();
+    actionCallback(this.getDataForm());
+  }
+
   render() {
     const { ...wrappedComponentProps } = this.props;
     const { ...stateToProps } = this.state;
@@ -26,6 +38,7 @@ const withForm = WrappedComponent => class extends Component {
           {...wrappedComponentProps}
           {...stateToProps}
           onFieldChange={this.onFieldChange}
+          onFormSubmit={this.onFormSubmit}
         />
       </Fragment>
     );

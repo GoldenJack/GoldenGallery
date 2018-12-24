@@ -10,14 +10,14 @@ function mapStateToProps(state) {
   const {
     loaded,
     loading,
-    entities: gallery,
+    error,
     size
   } = state.gallery;
   return {
     loaded,
     loading,
+    error,
     size,
-    gallery,
   };
 }
 

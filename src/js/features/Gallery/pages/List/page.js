@@ -6,62 +6,58 @@ import './style.scss';
 
 
 class GalleryList extends Component {
-    constructor(props){
-        super(props);
-    }
+  componentDidMount() {
+    const { loaded, loading, getGallery } = this.props;
+    !loaded && !loading && getGallery();
+  }
 
-    componentDidMount(){
-        const { loaded, loading, getGallery } = this.props;
-        !loaded && !loading && getGallery();
-    }
+  _galleryAlbum(gallery) {
+    const { previewOpen, size } = this.props;
 
-    _galleryAlbum( gallery ){
-        if( gallery ){
-            let result = gallery.map(( galleryAlbum )=>
-                <Album 
-                    key={ galleryAlbum.key } 
-                    name={ galleryAlbum.titleRu } 
-                    photos={ galleryAlbum.photos }
-                    preview={ this.props.previewOpen }
-                    album={ galleryAlbum.id }
-                    size={ this.props.size }
-                    parrent={ 'gallery' }/>
-            )
-            
-            return result;
-        } else {
-            return (
-                <p>К сожалению ничего не удалось найти</p>
-            )
-        }
-    }
+    if (gallery) {
+      const result = gallery.map((album) => (
+        <Album
+          key={album.key}
+          name={album.titleRu}
+          photos={album.photos}
+          preview={previewOpen}
+          album={album.id}
+          size={size}
+        />
+      ));
 
-    render(){
-        const { loading, gallery } = this.props;
-        let album = !loading && this._galleryAlbum( gallery );
-
-        return (
-            <Fragment >
-                <Preloader loading={ loading } />
-                { !loading && (
-                    <div className="gallery animated fadeIn">
-                        { album }
-                    </div>
-                ) }
-            </Fragment>
-        )
+      return result;
+    } else {
+      return (
+        <p>К сожалению ничего не удалось найти</p>
+      );
     }
+  }
+
+  render() {
+    const { loading, gallery } = this.props;
+    const album = !loading && this._galleryAlbum(gallery);
+
+    return (
+      <Fragment>
+        <Preloader loading={loading} />
+        {!loading && (
+          <div className="gallery animated fadeIn">
+              { album }
+          </div>
+        )}
+      </Fragment>
+    );
+  }
 }
 
 GalleryList.propTypes = {
-    gallery: PropTypes.array,
-    preview: PropTypes.object.isRequired,
-    closePreviewAction: PropTypes.func
+  gallery: PropTypes.array.isRequired,
+  loaded: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+  getGallery: PropTypes.func.isRequired,
+  previewOpen: PropTypes.func.isRequired,
+  size: PropTypes.number.isRequired
 };
-
-GalleryList.defaultProps = {
-    gallery: [],
-    preview: {}
-}
 
 export default GalleryList;

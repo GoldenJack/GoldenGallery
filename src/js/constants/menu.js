@@ -1,26 +1,20 @@
 export const routes = [
   {
-    name: 'Домашняя',
-    to: '/',
-    subMenuTitle: 'Навигация',
-    subMenu: []
-  },
-  {
     name: 'Галлерея',
-    to: '/gallery',
+    to: '/',
     subMenuTitle: 'Альбомы',
     subMenu: [
       {
         name: 'Пейзажи',
-        to: '/gallery/landscape'
+        to: '/landscape'
       },
       {
         name: 'Города',
-        to: '/gallery/city'
+        to: '/city'
       },
       {
         name: 'Люди',
-        to: '/gallery/peaple'
+        to: '/peaple'
       }
     ]
   }

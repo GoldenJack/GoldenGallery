@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Layout from 'features/Layout';
-import Home from 'features/Home';
 import Gallery from 'features/Gallery';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -19,8 +18,7 @@ ReactDOM.render(
     <HashRouter>
       <Switch>
         <Layout>
-          <Route exact path="/" component={Home} />
-          <Route path="/gallery" component={Gallery} />
+          <Route path="/" component={Gallery} />
         </Layout>
       </Switch>
     </HashRouter>

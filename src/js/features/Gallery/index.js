@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import PageOfGallery from 'pages/PageOfGallery';
 import List from './pages/List';
 import Photo from './pages/Photo';
@@ -8,15 +7,15 @@ import Album from './pages/Album';
 
 const ROUTES = [
   {
-    path: '/gallery',
+    path: '/',
     component: List
   },
   {
-    path: '/gallery/:album',
+    path: '/:album',
     component: Album
   },
   {
-    path: '/gallery/:album/:id',
+    path: '/:album/:id',
     component: Photo
   }
 ];

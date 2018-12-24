@@ -2,7 +2,7 @@ export const FETCH = 'FETCH_';
 export const ADD = 'ADD_';
 export const UPDATE = 'UPDATE_';
 export const REMOVE = 'REMOVE_';
-export const GET = 'GET_'
+export const GET = 'GET_';
 
 export const FILTER = 'FILTER_';
 

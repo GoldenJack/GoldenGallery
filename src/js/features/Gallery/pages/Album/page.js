@@ -9,51 +9,62 @@ import './style.scss';
 const cn = bemHelper('album-page');
 
 class AlbumPage extends Component {
-  state = {
-    albumId: this.props.match.params.album
-  }
-  componentDidMount(){
-    const { loaded, getAlbum } = this.props;
-    const { albumId } = this.state;
-    !loaded && getAlbum(albumId);
+  componentDidMount() {
+    const { loaded, getAlbum, match: { params: { album } } } = this.props;
+    !loaded && getAlbum(album);
   }
 
-  _renderAlbum(){
+  componentDidUpdate(prevProps) {
+    const { getAlbum, match: { params: { album } } } = this.props;
+    const prevAlbum = prevProps.match.params.album;
+    prevAlbum !== album && getAlbum(album);
+  }
+
+  _renderAlbum() {
+    const { previewOpen, size } = this.props;
     const album = this.props.album[0];
-    if( album ){
-      let result = (
-        <Album 
-          key={ album.key } 
-          name={ album.titleRu } 
-          photos={ album.photos }
-          // preview={ this.props.previewOpen }
-          album={ album.id }
-          size={ this.props.size }
-          parrent={ 'gallery' }/>
-      )
-      
+    if (album) {
+      const result = (
+        <Album
+          key={album.key}
+          name={album.titleRu}
+          photos={album.photos}
+          preview={previewOpen}
+          album={album.id}
+          size={size}
+        />
+      );
       return result;
-  } else {
+    } else {
       return (
-          <p>К сожалению ничего не удалось найти</p>
-      )
-  }
+        <p>К сожалению ничего не удалось найти</p>
+      );
+    }
   }
 
-  render(){
+  render() {
     const { loading } = this.props;
     const album = !loading && this._renderAlbum();
     return (
-      <Fragment >
-        <Preloader loading={ loading } />
+      <Fragment>
+        <Preloader loading={loading} />
         { !loading && (
-            <div {...cn('', '', 'animated fadeIn')}>
-                { album }
-            </div>
+          <div {...cn('', '', 'animated fadeIn')}>
+              { album }
+          </div>
         ) }
       </Fragment>
-    )
+    );
   }
 }
+
+AlbumPage.propTypes = {
+  loaded: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+  getAlbum: PropTypes.func.isRequired,
+  previewOpen: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired,
+  size: PropTypes.number.isRequired
+};
 
 export default AlbumPage;

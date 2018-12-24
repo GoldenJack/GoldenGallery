@@ -1,9 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import withPreview from 'HOC/Preview/withPreview';
-import { 
-    getAlbum
-} from 'features/Gallery/redux-store/entites/Album';
+import { getAlbum } from 'features/Gallery/redux-store/entites/Album';
 import Page from './page';
 
 const mapStateToProps = state => {
@@ -15,15 +13,15 @@ const mapStateToProps = state => {
   } = state.galleryAlbum;
   const {
     size
-  } = state.gallery
+  } = state.gallery;
   return {
     loading,
     loaded,
     error,
     album,
     size
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   const actions = bindActionCreators(
@@ -33,10 +31,10 @@ const mapDispatchToProps = dispatch => {
     dispatch
   );
 
-  return { ...actions }
-}
+  return { ...actions };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withPreview(Page))
+)(withPreview(Page));
