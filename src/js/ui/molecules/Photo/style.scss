@@ -1,0 +1,87 @@
+.photo {
+  flex: 0 0 100%;
+  &--2 {
+    flex: 0 0 calc( 100% / 2 )
+  }
+  &--3 {
+    flex: 0 0 calc( 100% / 3 )
+  }
+  &--4 {
+    flex: 0 0 calc( 100% / 4 )
+  }
+  &--5 {
+    flex: 0 0 calc( 100% / 5 )
+  }
+  &--6 {
+    flex: 0 0 calc( 100% / 6 )
+  }
+  &--7 {
+    flex: 0 0 calc( 100% / 7 )
+  }
+  &--8 {
+    flex: 0 0 calc( 100% / 8 )
+  }
+  &--9 {
+    flex: 0 0 calc( 100% / 9 )
+  }
+  &--10 {
+    flex: 0 0 calc( 100% / 10 )
+  }
+}
+.photo__content {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+
+  margin: 0 10px 10px;
+  border-radius: 5px;
+
+  transition: ease-in-out .3s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    .photo__image {
+      transform: scale(1.1)
+    }
+    .photo__info {
+      opacity: 1;
+    }
+  }
+}
+.photo__info {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  background-color:  rgba(17, 17, 17, 0.5);
+  z-index: 9999;
+  opacity: 0;
+
+  transition: ease-in-out .3s;
+}
+.photo__info-title {
+  color: white;
+}
+.photo__image {
+  width: 100%;
+  border-radius: 5px;
+
+  transition: ease-in-out .5s;
+}
+
+.anim-appear {
+  opacity: .1;
+  transform: scale(.5);
+}
+   
+.anim-appear.anim-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform .7s ease-in;
+}

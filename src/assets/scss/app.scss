@@ -15,9 +15,12 @@ html, body {
 /*=============
 modules
 ===============*/
+@import "./modules/variables";
 @import "./modules/grid";
 @import "./modules/buttons";
 @import "./modules/typography";
+@import "./modules/fonts";
+
 /*=============
 components
 ===============*/
@@ -26,7 +29,13 @@ components
 @import "./components/search";
 @import "./components/docket";
 @import "./components/content";
+@import "./components/preview";
+@import "./components/gallery";
+@import "./components/list";
+@import "./components/figure";
 
 /*=============
-pages
+plugins
 ===============*/
+
+@import "../../../node_modules/animate.css/animate.min.css";

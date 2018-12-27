@@ -1,0 +1,16 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 0px 20px 0px rgba(0,0,0,.7);
+
+  &--fixed {
+    top: 0;
+    right: 0;
+    position: fixed;
+    height: 100vh;
+  }
+}
+.comments__list {
+  flex: 1 1 100%;
+  padding: 10px;
+}

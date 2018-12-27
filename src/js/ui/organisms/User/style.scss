@@ -1,0 +1,29 @@
+.user {
+
+  &__btn {
+    background-color: #ea5a5a;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    color:  #ffffff;
+  }
+
+}
+.user__avatar {
+  margin-bottom: 18px;
+}
+.user__name {
+  color: #fff;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.user__counter {
+  color: #a3a2a8;
+  font-size: 11px;
+  margin-bottom: 21px;
+}
+
+.user__btn {
+  width: 160px;
+  height: 36px;
+}
