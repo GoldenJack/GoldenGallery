@@ -1,0 +1,32 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+/*=============
+modules
+===============*/
+@import "./modules/grid";
+@import "./modules/buttons";
+@import "./modules/typography";
+/*=============
+components
+===============*/
+@import "./components/account";
+@import "./components/user";
+@import "./components/search";
+@import "./components/docket";
+@import "./components/content";
+
+/*=============
+pages
+===============*/
